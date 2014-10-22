@@ -1,0 +1,74 @@
+.rootktvUl
+{
+  margin:3px;
+}
+.ktvUl
+{
+  margin:1px;  
+  padding-left: 10px; 
+ 
+}
+
+ 
+.ktvTop
+{
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-left:17px;
+  white-space: nowrap;
+  overflow: hidden  ;  
+  
+}
+
+.ktvSelected .ktvText
+{
+  border:1px solid #104266;
+  background: #699FD0;
+  
+}
+
+/*ktvMinus: Minus button in detail*/
+.ktvMinus
+{
+  background:url(../../img/treeview/pm.gif) no-repeat scroll 0pt -7pt;
+}
+
+/*ktvPlus: Plus button in detail*/
+.ktvPlus
+{
+  background:url(../../img/treeview/pm.gif) no-repeat scroll 0pt 0pt;
+}
+.ktvPM
+{
+  height:9px;
+  width:9px;
+  margin:3px 8px 0pt -16px;
+  cursor:pointer;
+  display:inline-block;
+  font-size:0pt;
+  padding:0pt;
+  vertical-align:top;
+ 
+}
+
+.ktvImage
+{
+  vertical-align:text-bottom;
+}
+.ktvText
+{
+  /*border:1px solid transparent;*/
+  color:#000000;
+  font-family:tahoma,verdana,sans-serif;
+  font-size:11px;
+  font-size-adjust:none;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:1.273em;  
+  padding:1px;
+  padding-left:2px;
+  padding-right:2px;
+  overflow:hidden; 
+        
+}

@@ -1,0 +1,130 @@
+.header_div_style
+{
+  box-shadow: 0 0 10px 0;
+/*filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5', MakeShadow='true', ShadowOpacity='0.50');*/
+  margin: 0px auto;
+  position: relative;
+}
+
+
+.modal_loading {
+display: none;
+position: fixed;
+z-index: 100000;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: rgba( 255, 255, 255, .8 ) url(../../img/loading.gif) 50% 50% no-repeat;
+}
+
+.modal_loading_div {
+display: none;
+position: absolute;
+z-index: 1000;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background: rgba( 255, 255, 255, .8 ) url(../../img/loading.gif) 50% 50% no-repeat;
+}
+
+
+.fb_left_float_div
+{
+    width: 66px;
+    height: 84px;
+    position: fixed;
+    left: -25px;
+    top: 5px;
+	z-index: 1001;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s;
+    -o-transition: left 0.3s;
+	background-image: url(../../img/facebook_float_left.png)
+}
+
+.fb_left_float_div:hover
+{
+    left: 0px;	
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s;
+    -o-transition: left 0.3s;
+}
+
+
+.scroll_top_bottom_right_float_div
+{
+    position:fixed;
+   min-height: 60px;
+   right:0;
+   bottom: -40px;
+   min-width: 60px;
+   font-size: 0;
+   cursor: pointer;
+	background: url('../../img/gototop.png')no-repeat;
+	z-index: 1001;
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}
+
+.scroll_top_bottom_right_float_div:hover
+{
+    bottom: 0px;
+	
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}
+
+
+
+.sound_on_float_div
+{
+    position:fixed;
+   min-height: 64px;
+   left:0;
+   bottom: -10px;
+   min-width: 64px;
+   font-size: 0;
+   cursor: pointer;
+	background: url('../../img/speaker_64_64.png')no-repeat;
+	z-index: 1001;
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}
+
+.sound_on_float_div:hover
+{
+    bottom: 0px;
+	
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}
+.sound_off_float_div
+{
+    position:fixed;
+   min-height: 64px;
+   left:0;
+   bottom: -10px;
+   min-width: 64px;
+   font-size: 0;
+   cursor: pointer;
+	background: url('../../img/speaker_off_64_64.png')no-repeat;
+	z-index: 1001;
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}
+
+.sound_off_float_div:hover
+{
+    bottom: 0px;
+	
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+}

@@ -1,0 +1,837 @@
+.avo_style {
+    background: #E9EBED;
+}
+.clear {
+    clear: both;
+}
+.space {
+    clear: both;
+    height: 20px;
+}
+.doubleSpace {
+    clear: both;
+    height: 40px;
+}
+.avo_style .avo_style_blueTableBox {
+    background-color: rgba(0, 162, 232, 0.2)
+}
+.avo_style .avo_style_headerBox {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 100px;
+    margin: 0 0 20px;
+    position: relative;
+    width: 100%;
+}
+.avo_style .avo_style_headerBox .avo_style_headerInnerBox  {
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}
+.avo_style .avo_style_wrapper {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 1000px;
+}
+a {
+    color: #333333;
+    text-decoration: none;
+}
+a:hover {
+    color: #009EE0;
+}
+.avo_style .avo_style_clear {
+    clear: both;
+}
+
+
+/*---------------------------------------*/
+
+.avo_style ul.avo_style_tab , .avo_style ul.avo_style_tab:before , .avo_style ul.avo_style_tab:after {
+    background: #009EE0;
+}
+.avo_style ul.avo_style_tab li {
+    background: #009EE0;
+    border: 0 none;
+    border-radius: 0;
+    display: table-cell;
+    float: none;
+    margin: 0 !important;
+    padding: 0;
+
+    border-left: 1px solid #009EE0;
+    border-right: 1px solid #32B2E7;
+}
+.avo_style ul.avo_style_tab li.ui-state-active {
+    padding-bottom: 0;
+}
+.avo_style ul.avo_style_tab li:first-child {
+    border-left: 0;
+}
+.avo_style ul.avo_style_tab li a {
+    background-color: #009EE0;
+    border: medium none;
+    color: #FFFFFF;
+    display: block;
+    font-size: 13px;
+    line-height: 40px;
+    /*max-width: 250px;*/
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.avo_style ul.avo_style_tab li a:hover {
+    background-color: #008ED0;
+}
+.avo_style ul.avo_style_tab li.ui-state-active a {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    max-width: 1000px;
+    line-height: 38px;
+    margin-top: 2px;
+}
+.avo_style ul.avo_style_tab, .avo_style ul.avo_style_tab:before, .avo_style ul.avo_style_tab:after {
+    background: none repeat scroll 0 0 #009EE0;
+    display: table;
+    padding: 0 !important;
+    width: 100%;
+    border: 0 none;
+    border-radius: 0;
+}
+.avo_style ul.avo_style_tab {
+    margin-bottom: 20px;
+}
+.avo_style .avo_style_main_tabs {
+    border: 0 none;
+    padding: 0;
+}
+.avo_style .avo_style_wrapperHeader {
+    background: none repeat scroll 0 0 #f2f2f2;
+    clear: both;
+    overflow: hidden;
+    padding: 10px 5px;
+    position: relative;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0 !important;
+}
+
+.avo_style .avo_style_item_search {
+    margin: 0;
+    padding: 10px 0;
+    position: relative;
+}
+.avo_style .avo_style_search_toolbar_container {
+    float: left;
+    margin: 0 1%;
+    padding-bottom: 20px;
+    position: relative;
+    width: 98%;
+}
+.avo_style .avo_style_search_header_bar {
+    overflow: hidden;
+    margin: 0 0 30px;
+}
+
+.avo_style .avo_style_btn {
+    background: none repeat scroll 0 0 #009EE0;
+    border: medium none;
+    border-radius: 0;
+    color: #FFFFFF;
+    float: right;
+    font-size: 16px;
+    font-weight: 400;
+    height: 35px !important;
+    line-height: 30px;
+    margin: 7px;
+    padding: 0;
+    text-shadow: 0 0 0;
+    width: 130px;
+}
+.avo_style .avo_style_btn:hover {
+    background-color: #008ED0;
+}
+.avo_style .avo_style_text_field {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: right;
+    height: 31px;
+    font-size: 15px;
+    margin-top: 8px;
+    padding: 1px 20px;
+    width: 580px;
+}
+
+.avo_style .avo_style_result_count_box {
+    color: #333333;
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.avo_style .avo_style_result_count_box .avo_style_result_count {
+    color: #009EE0;
+}
+.avo_style .avo_style_price_range_div {
+    display: table;
+    font-size: 13px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #DFDFDF;
+}
+.avo_style .avo_style_price_range_block {
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+}
+.avo_style .avo_style_price_range_block label {
+    line-height: 26px;
+}
+.avo_style .avo_style_price_range_block input {
+    margin: 0;
+    position: relative;
+    top: 3px;
+}
+.avo_style .avo_style_price_range_block .avo_style_Vat {
+    margin: 0 5px 0 0;
+    position: relative;
+    top: 2px;
+}
+
+/*-------------------------------------------------------*/
+
+.avo_style .avo_search_body_categories_container ul {
+    border: 1px solid #D3D3D3;
+    border-bottom: 0;
+    margin: 0 10px;
+    padding: 0;
+}
+.avo_style .avo_search_body_categories_container ul li {
+    padding: 8px 0 8px 10px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #D3D3D3;
+    width: auto;
+    height: 20px;
+}
+
+.avo_style .avo_search_body_categories_container > ul li:hover {
+    background-color: #FFFFFF;
+}
+.avo_style .avo_search_body_categories_container > ul li a,
+.avo_style .avo_search_body_categories_container > ul li a:hover {
+    background: none;
+    border: 0;
+    padding: 2px 5px 0 0;
+    margin: 0;
+    line-height: 20px;
+    height: 100%;
+    text-indent: 0;
+}
+.avo_style .avo_search_body_categories_container > ul li a:hover {
+    color: #009EE0;
+}
+.avo_style .ui-menu .ui-menu-item a.ui-state-focus,.ui-menu .ui-menu-item a.ui-state-active {
+    margin:0;
+}
+
+/*------------------------------------*/
+
+.avo_style .item_image_60_60 {
+    border: 0 none;
+    border-radius: 0;
+    box-shadow: 0 0 0;
+}
+.avo_style .avo_style_searchItemBox {
+    position: relative; 
+    padding: 20px 10px;
+    border: 1px solid #E2E2E2;
+    border-bottom: 0px solid #E2E2E2;
+}
+.avo_style .avo_style_imageBox {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 180px;
+    text-align: center;
+}
+.avo_style .avo_style_imageBox img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.avo_style .avo_style_aboutBox {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.avo_style .avo_style_priceBox {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.avo_style .avo_style_aboutBox .avo_style_aboutBox1,.avo_style_aboutBox .avo_style_aboutBox3 {
+    float: left;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    line-height: 18px;
+
+}
+.avo_style .avo_style_aboutBox .avo_style_aboutBox2 {
+    float: left;
+    height: auto;
+    line-height: 18px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #696969;
+    white-space: nowrap;
+    width: 100%;
+}
+.avo_style .avo_style_infoBox {
+    overflow: hidden;
+}
+.avo_style_aboutBox .avo_style_aboutBox1 a {
+    color: #333333 !important;
+    float: left;
+    max-width: 440px;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+.avo_style .avo_style_aboutBox .avo_style_aboutBox1, .avo_style_aboutBox .avo_style_aboutBox1 a:hover {
+    color: #009EE0 !important;
+}
+.avo_style .avo_style_aboutBox .avo_styleItemBrandBox {
+    color :#009EE0;
+    font-size: 11px;
+}
+.avo_style_instockItem {
+    color: #006600;
+    line-height: 18px;
+}
+
+.avo_style .avo_style_priceBox .avo_style_leftBox {
+    width: 60%;
+    height:65px;
+    float: left;
+}
+.avo_style .avo_style_priceBox .avo_style_rightBox {
+    width: 40%;
+    height:40px;
+    line-height:40px;
+    float: left;
+}
+.avo_style .avo_style_addToBtnBox {
+    display: block;
+    float: left;
+}
+.avo_style .avo_style_addToBtnBox a {
+    text-shadow: 0 1px 1px #005376;
+    background-color: #009EE0;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 35px;
+    color: #f2f2f2;
+}
+
+.avo_style .avo_style_addToBtnBox a:hover {
+    background-color: #008ED0;
+    color: #FFFFFF;
+}
+
+.avo_style .avo_style_priceBox .avo_style_price_box {
+    padding-left:2px;
+    float: left;
+    color: #009EE0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.avo_style .search_item_title {
+    display: inline-block;
+}
+.avo_style .avo_style_pageinggBox {
+    padding: 10px 0 18px 0;
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #DFDFDF;
+}
+.avo_style .avo_style_contentBox {
+    width:100%; 
+    position: relative;
+    min-height: 600px;
+    padding-bottom: 20px;
+}
+.avo_style input {
+    border: 1px solid #D2D2D2;
+}
+.avo_style .button,.avo_style .button1 {
+    background: none repeat scroll 0 0 #009EE0;
+    border: medium none;
+    border-radius: 0;
+    color: #F2F2F2;
+    cursor: pointer;
+    /*float: right;*/
+    font-size: 16px;
+    font-weight: 400;
+    height: 30px !important;
+    line-height: 29px;
+    margin: 0 0 10px 10px;
+    padding: 0 10px;
+    text-shadow: 0 0 0;
+    /*min-width: 130px;*/
+    display: inline-block;
+
+    -webkit-transition: background 0.4s ease-in-out,color 0.4s ease-in-out;
+    -moz-transition: background 0.4s ease-in-out,color 0.4s ease-in-out;
+    -ms-transition: background 0.4s ease-in-out,color 0.4s ease-in-out;
+    -o-transition: background 0.4s ease-in-out,color 0.4s ease-in-out;
+    transition: background 0.4s ease-in-out,color 0.4s ease-in-out;
+}
+.avo_style .button.gray {
+    background: none repeat scroll 0 0 #E9E9E9;
+    color: #333333
+}
+.avo_style .button.gray:hover {
+    background: none repeat scroll 0 0 #c9c9c9;
+    color: #FFFFFF;
+}
+
+
+.avo_style .avo_style_wrapperHeader .button{
+    vertical-align: top;
+    display: inline-block;
+}
+
+
+.avo_style .button:hover,.avo_style .button1:hover {
+    background-color: #008ED0;
+    color: #FFFFFF;
+}
+.avo_style .button.avo_style_checkBtn {
+    float: left;
+    margin-left: 0;
+    margin-top: 10px;
+    color: #F2F2F2;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 35px;
+    text-shadow: 0 1px 1px #005376;
+}
+
+/*.avo_style .button.avo_style_checkBtn:hover {
+    background-color: #008ED0;
+    color: #FFFFFF;
+}*/
+.avo_style select {
+    border: 1px solid #D2D2D2;
+}
+
+.avo_style .button:hover {
+    background-color: #008ED0;
+}
+.avo_style input.translatable_attribute_element {
+    height: 27px;
+    padding: 1px 10px;
+}
+.avo_style * {
+    font-family: sans-serif,Arial;    
+}
+.avo_style .avo_style_ItemBox {
+    background-color: #009EE0;
+    border: 1px solid #D3D3D3;
+    border-bottom: 0;
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0 0 10px;
+    padding: 8px 0 8px 10px;
+    font-size: 14px;
+}
+.avo_style .avo_style_ItemBox a {
+    color: #FFFFFF;
+}
+.avo_style .avo_style_ItemCategoryBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    border-top: 0;
+    color: #333;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 0 0 10px;
+    padding: 8px 0 8px 10px;
+    font-size: 14px;
+}
+.avo_style .avo_style_ItemWrapperCatBox {
+    width: 230px;
+}
+.avo_style .avo_style_category_property_view_container {
+    border: 1px solid #D3D3D3;
+    float: left;
+    border-top: 0;
+    margin-left: 10px;
+    width: 218px;
+}
+.avo_style .button1 {
+    border-radius: 0 !important;
+    padding: 0 20px;
+    width: auto;
+}
+.avo_style .avo_style_priceTitle {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    text-align: right;
+    width: 120px;
+
+}
+.avo_style .avo_style_price_box .translatable_attribute_element {
+    color: #808080;
+}
+.avo_style .avo_style_price_box .avo_style_BasePrice {
+    font-size: 16px;
+}
+.avo_style .avo_style_aboutBox3 {
+    margin-bottom: 5px;
+}
+.avo_style_load_moreBtn {
+    width: 100%; 
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.avo_style_load_moreBtn a.button1 {
+    display: block;
+    float: none;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+
+/*-----------upload----------------*/
+
+.avo_style_upload_price_container {
+    margin: 0 1%;
+    padding-bottom: 20px;
+    width: 98%;
+}
+.avo_style .avo_style_uploadTopBox {
+    position: relative;
+    background: none no-repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #DFDFDF;
+    font-size: 13px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.avo_style .avo_style_uploadTopBox .button.glyph {
+    display: inline-block;
+}
+.avo_style .avo_style_titleBox {
+    float: left;
+    line-height: 32px;
+    margin-right: 14px;
+    padding-left: 10px;
+    text-align: left;
+}
+.avo_style .avo_style_up_selected_company {
+    float: left;
+    height: 25px;
+    line-height: 32px;
+    margin: 4px 5px 0 0;
+}
+.avo_style .avo_style_uploadWrapperBox {
+    border: 1px solid #DFDFDF;
+    font-size: 13px;
+    margin: 20px auto 0;
+    overflow: hidden;
+    width: 96%;
+}
+.avo_style .avo_style_uploadWrapperBox thead {
+    background: none no-repeat scroll 0 0 #F5F5F5;
+}
+.avo_style .avo_style_uploadWrapperBox thead th {
+    height: 36px;
+    text-align: center;
+}
+.avo_style .avo_style_uploadWrapperBox tbody td {
+    height: 36px;
+    text-align: center;
+    border-top: 1px solid #DFDFDF;
+    padding: 5px 0;
+}
+
+
+
+
+/*--------------footer--------------------*/
+
+
+.avo_style .avo_style_footerBox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 30px auto auto;
+    overflow: hidden;
+    padding-bottom: 40px;
+    padding-top: 50px;
+}
+.avo_style .avo_style_footerBox .avo_style_footerInnerBox {
+    margin: 0 auto;
+    width: 1000px;
+    line-height:30px;
+    text-align: center;
+    font-size: 12px
+}
+
+.avo_style .avo_style_footerBox .avo_style_footerInnerBox .title {
+    color: #009EE0;
+    font-size: 16px;
+}
+.avo_style .avo_style_footerBox .avo_style_footerInnerBox .avo_style_footerBlock {
+    width:25%; 
+    float:left;
+}
+
+
+
+/*----------------company-------------------*/
+
+.avo_style .avo_style_CompaniesBlockTitle {
+    text-align: center;
+    margin: 20px 0 0;
+}
+.avo_style .avo_style_companyBox {
+    border: 1px solid #DFDFDF;
+    margin: 20px;
+    padding: 0;
+    border-radius: 0;    
+}
+.avo_style .avo_style_importerCompaniesBlock {
+    background: none no-repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #DFDFDF;
+    margin: 20px 2% 0;
+    padding: 15px 2%;
+    text-align: center;
+    width: 92%;
+    font-size: 12px;
+    line-height: 34px;
+}
+.avo_style .avo_style_importerCompaniesBlock .avo_style_blockLeft {
+    float:left;
+}
+.avo_style .avo_style_importerCompaniesBlock .avo_style_blockRight {
+    float:right;
+}
+.avo_style .avo_style_companyesTable {
+    border: 1px solid #DFDFDF;
+    margin: 20px auto;
+    overflow: hidden;
+    font-size: 13px;
+    width: 96%;
+}
+.avo_style .avo_style_companyesTable thead {
+    background: none no-repeat scroll 0 0 #F5F5F5;
+}
+.avo_style .avo_style_companyesTable .avo_style_companyesTableCellIndexBox {
+    border-right: 1px solid #DFDFDF;
+    width: 30px;	
+}
+.avo_style .avo_style_companyesTable thead th {
+    height: 36px;
+    text-align: center;
+}
+.avo_style .avo_style_companyesTable tbody td {
+    text-align: center;
+    border-top: 1px solid #DFDFDF;
+    padding: 5px 5px;
+}
+.avo_style .avo_style_companyesTable tbody td button {
+    color: #F2F2F2;
+    background: none repeat scroll 0 0 #009EE0;
+    cursor: pointer;
+}
+.avo_style .avo_style_companyesTable tbody td button:hover {
+    background-color: #008ED0;
+    color: #FFFFFF;
+}
+.avo_style .avo_style_companyesTable tbody td textarea {
+    border: 1px solid #DFDFDF;
+    left: -1px;
+    padding: 4%;
+    position: relative;
+    width: 92%;
+}
+.avo_style .avo_style_companyesTable tbody .classification {
+    display: inline-block;
+    margin-top: 5px;
+}
+.avo_style .avo_style_companyesTable tbody td.avo_style_price_files_content {
+    width: 170px;
+}
+
+/*------------------------*/
+
+.avo_style .avo_style_manage_items_container {
+    margin: 0 1%;
+    padding-bottom: 20px;
+    width: 98%;
+}
+.avo_style .avo_style_table_titleBox {
+    max-width: 330px; 
+    position: relative;
+    vertical-align: middle;
+    white-space: normal;
+    color:#333333;
+}
+.avo_style .avo_style_table_titleBox.inactive {
+    color:#999999;
+}
+.avo_style .avo_style_manageBox select{
+    float: left;
+    height: 25px;
+    line-height: 32px;
+    margin: 4px 5px 0 0;
+}
+.avo_style .avo_style_uploadTopBox.avo_style_manageBox {
+    padding: 20px 0;
+}
+.avo_style .avo_style_uploadWrapperBox.avo_style_manageBox tbody td {
+    padding: 5px 10px;
+}
+
+.avo_style .button.avo_style_table_left_topBtn {
+    margin:0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    height: 15px;
+    line-height: 10px
+}
+.avo_style .button.avo_style_table_right_topBtn {
+    position: absolute;
+    margin:0; 
+    right:0; 
+    top:0;
+    height: 20px;
+}
+.avo_style .button.avo_style_table_right_bottomBtn {
+    position: absolute;
+    margin: 0; 
+    right:0; 
+    bottom:0;
+    height: 20px
+}
+
+
+/*------------------------detail----------------------------*/
+
+
+.avo_style .avo_style_detail_block {
+    padding: 20px 30px;    
+}
+.avo_style .avo_style_detail_block * {
+    white-space: normal;  
+}
+.avo_style .avo_style_detailBox {
+    display: table;
+    float: left;
+    width: 100%;
+}
+.avo_style .avo_style_detailBox .avo_style_leftContent {
+display: table-cell;
+width: 320px;
+}
+.avo_style .avo_style_detailBox .avo_style_rightContent {
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+.avo_style .avo_style_detail_imageBox {
+    border: 1px solid #D9D9D9;
+    display: table;
+    height: 260px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    width: 260px;
+
+    -webkit-transition: box-shadow 0.4s ease-in-out;
+    -moz-transition: box-shadow 0.4s ease-in-out;
+    -ms-transition: box-shadow 0.4s ease-in-out;
+    -o-transition: box-shadow 0.4s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
+}
+.avo_style .avo_style_detail_imageBox:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.avo_style .avo_style_detail_imageBox a {
+    display: table-cell;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.avo_style .item_title_large_view {
+    color: #333333;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding: 0;
+}
+.avo_style .skype_c2c_textarea_span {
+    margin-left: 20px;
+}
+.avo_style .avo_style_rightContent .button {
+    margin: 0;
+}
+.avo_style .avo_style_centerBlock .large_view_short_description_header_style {
+    color: #009EE0;
+    font-size: 16px;
+}
+
+.avo_style .avo_style_centerBlock button {
+    margin: 0 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

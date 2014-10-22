@@ -1,0 +1,12 @@
+.customer_auto_hidden_message_dialog_template_style {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  float: right;
+  background-color: #FFF;
+  text-align: left;
+  border-radius: 15px;
+  border: 5px solid #AAA;
+  display: none;
+  margin-right: 10px;
+}

@@ -1,0 +1,21 @@
+.order_expand_button
+{
+  background-image: url(../../../img/checkout/expand_vertical.png);
+  background-position: left;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.order_collapse_button
+{
+  background-image: url(../../../img/checkout/collapse_vertical.png);
+  background-position: left;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top: 15px;
+  cursor: pointer;
+}

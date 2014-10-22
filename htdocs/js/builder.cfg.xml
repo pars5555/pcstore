@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<builders>
+    <builder>
+        <debug>true</debug>
+        <generate_doc package="">false</generate_doc>
+        <output>
+            <file>out/ngs.js</file>
+            <compress>false</compress>
+        </output>
+        <input>
+            <files>
+                <file>ngs/LoadFactory.class.js</file>
+                <file>ngs/ActionFactory.class.js</file>
+                <file>Main.class.js</file>
+            </files>
+        </input >
+    </builder> 
+    <!-- manager Part -->
+    <builder>
+        <debug>true</debug>
+        <generate_doc package="managers">false</generate_doc>
+        <output>
+            <file>out/ngs_manager.js</file>
+            <compress>false</compress>
+        </output>
+        <input>
+            <files>
+                <file>ngs/managers/LoadManager.class.js</file>
+                <file>ngs/managers/PageManager.class.js</file>
+                <file>ngs/managers/LanguageManager.class.js</file>
+                <file>ngs/managers/DialogsManager.class.js</file>
+                <file>ngs/managers/CustomerAlertsManager.class.js</file>
+                <file>ngs/managers/PcConfiguratorManager.class.js</file>				
+                <file>ngs/managers/PagingManager.class.js</file>
+            </files>
+        </input >
+    </builder>
+    <builder>
+        <debug>true</debug>
+        <generate_doc package="util">false</generate_doc>
+        <output>
+            <file>out/ngs_util.js</file>
+            <compress>false</compress>
+        </output>
+        <input>
+            <files>                
+                <file>lib/jquery/jquery-ellipsis.js</file>		
+                <file>lib/jquery/jquery-ui-1.9.2.js</file>		                
+                <file>lib/effects.js</file>		
+                <file>lib/jquery/jquery.blockUI.js</file>		
+                <file>lib/jquery/jquery.cookie.js</file>		
+                <file>lib/jquery/jquery.crypt.js</file>		
+                <file>lib/lightbox/js/jquery.lightbox-0.5.js</file>	                
+                <file>lib/tinymce4/tinymce/js/tinymce/tinymce.js</file>		
+                <file>lib/jquery.smooth-scroll.min.js</file>               
+                <file>lib/jquery/jquery.countdown.js</file>
+                
+                <file doc="true">ngs/util/AjaxLoader.class.js</file>
+                <file>ngs/util/FacebookLogin.js</file>
+                <file>ngs/util/GooglePlusLogin.js</file>
+                <file>ngs/util/LinkedinLogin.js</file>
+                <file>ngs/util/DeepnessArranger.js</file>
+                <file>ngs/util/InplaceEditor.class.js</file>
+                <file>ngs/util/LiveSearchField.class.js</file>
+                <file>ngs/util/Navigator.class.js</file>
+                <file>ngs/util/UrlObserver.class.js</file>
+                <file>ngs/util/UrlFormater.class.js</file>				
+                <file>ngs/util/crc32.js</file>	               
+                <file>ngs/util/TreeViewUtility.class.js</file>
+                <file>ngs/util/SubCategoryTreeViewUtility.class.js</file>
+                <file>ngs/util/FilterItemsTreeViewUtility.class.js</file>
+                <file>ngs/util/CategoryPropertyViewsUtility.class.js</file>
+                <file>ngs/util/util_functions.js</file>
+                <file>ngs/util/UrlChangeEventObserver.class.js</file>				
+            </files>
+        </input >
+    </builder>
+    <builder>
+        <debug>true</debug>
+        <generate_doc package="loads">false</generate_doc>
+        <output>
+            <file>out/ngs_loads.js</file>
+            <compress>false</compress>
+        </output>
+        <input>
+            <files>
+                <file doc="true">ngs/loads/AbstractLoad.class.js</file>
+                <file>ngs/loads/main/MainLoad.class.js</file>
+                <file>ngs/loads/main/HomePageLoad.class.js</file>
+                <file>ngs/loads/main/LoginLoad.class.js</file>
+                <file>ngs/loads/main/LoginDialogLoad.class.js</file>
+                <file>ngs/loads/main/ForgotLoginLoad.class.js</file>
+                <file>ngs/loads/main/PagingLoad.class.js</file>
+                <file>ngs/loads/main/TableViewLoad.class.js</file>
+                <file>ngs/loads/main/CompaniesListLoad.class.js</file>
+                <file>ngs/loads/main/ItemSearchLoad.class.js</file>
+                <file>ngs/loads/main/checkout/ShoppingCartLoad.class.js</file>
+                <file>ngs/loads/main/checkout/CartStepInnerLoad.class.js</file>
+                <file>ngs/loads/main/checkout/LoginStepInnerLoad.class.js</file>
+                <file>ngs/loads/main/checkout/ShippingStepInnerLoad.class.js</file>
+                <file>ngs/loads/main/checkout/PaymentStepInnerLoad.class.js</file>
+                <file>ngs/loads/main/checkout/FinalStepInnerLoad.class.js</file>
+                <file>ngs/loads/main/checkout/confirm/ConfirmCellPhoneNumberLoad.class.js</file>
+                <file>ngs/loads/main/PcConfiguratorLoad.class.js</file>								
+                <file>ngs/loads/main/pcc/PccSelectCaseLoad.class.js</file>				
+                <file>ngs/loads/main/pcc/PccSelectMbLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectRamLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectCpuLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectHddLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectSsdLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectCoolerLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectMonitorLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectOptLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectKeyboardLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectMouseLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectPowerLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectSpeakerLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccSelectGraphicsLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccItemDescriptionLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccTotalCalculationsLoad.class.js</file>
+                <file>ngs/loads/main/pcc/PccCreditCalculationLoad.class.js</file>                
+                <file>ngs/loads/main/pcc/PccAutoConfigurationByFiltersLoad.class.js</file>
+                <file>ngs/loads/main/CompanyZippedPricesMoreLoad.class.js</file>
+                <file>ngs/loads/servicecompany/ServiceCompanyZippedPricesMoreLoad.class.js</file>
+                <file>ngs/loads/main/YourProfileLoad.class.js</file>
+                <file>ngs/loads/main/UserManagementLoad.class.js</file>
+                <file>ngs/loads/main/PendingUsersListLoad.class.js</file>
+                <file>ngs/loads/main/SubUsersListLoad.class.js</file>
+                <file>ngs/loads/main/UserRegistrationLoad.class.js</file>
+                <file>ngs/loads/main/ContactUsLoad.class.js</file>
+                <file>ngs/loads/main/YourOrdersLoad.class.js</file>
+                <file>ngs/loads/main/ItemLargeViewLoad.class.js</file>
+                <file>ngs/loads/main/DealsLoad.class.js</file>
+                <file>ngs/loads/main/YourMailsLoad.class.js</file>				
+                <file>ngs/loads/main/mails/InboxLoad.class.js</file>				
+                <file>ngs/loads/main/mails/SentLoad.class.js</file>				
+                <file>ngs/loads/main/mails/TrashLoad.class.js</file>				
+                <file>ngs/loads/main/mails/ComposeLoad.class.js</file>		
+                <file>ngs/loads/main/mails/EmailBodyLoad.class.js</file>				
+                <file>ngs/loads/main/mails/InsertContactLoad.class.js</file>				
+                <file>ngs/loads/main/ImportGoogleContactsLoad.class.js</file>				
+                <file>ngs/loads/admin/ItemsCategoriesLoad.class.js</file>								
+                <file>ngs/loads/admin/AdminStatisticsLoad.class.js</file>								
+                <file>ngs/loads/admin/AdminSendSmsLoad.class.js</file>								
+                <file>ngs/loads/admin/PcstoreCamera1Load.class.js</file>								
+                <file>ngs/loads/admin/AdminCreateAlertAction.class.js</file>								
+                <file>ngs/loads/admin/import/ImportPriceLoad.class.js</file>								
+                <file>ngs/loads/admin/import/ImportStepOneLoad.class.js</file>												
+                <file>ngs/loads/admin/import/ImportStepTwoLoad.class.js</file>								
+                <file>ngs/loads/admin/import/ImportStepThreeLoad.class.js</file>								
+                <file>ngs/loads/admin/newsletters/ManageNewslettersLoad.class.js</file>								
+                <file>ngs/loads/admin/newsletters/OpenNewsletterLoad.class.js</file>								
+                <file>ngs/loads/admin/newsletters/SaveNewsletterLoad.class.js</file>								
+                <file>ngs/loads/admin/newsletters/NewsletterSendersLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/AdminActionsViewLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/SystemConfigLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/GalleryViewLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/SearchStatisticsViewLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/AdminUserManagementLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/ItemsManagementLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/CompaniesManagementLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/CreateNewAlertLoad.class.js</file>								
+                <file>ngs/loads/admin/sysconfig/CustomerAlertsAfterLoginLoad.class.js</file>								
+                <file>ngs/loads/company/Next24HoursSelectLoad.class.js</file>				
+                <file>ngs/loads/company/stock/AddEditItemLoad.class.js</file>				
+                <file>ngs/loads/company/stock/ItemPicturesLoad.class.js</file>				
+                <file>ngs/loads/company/stock/SubCategoriesSelectionLoad.class.js</file>
+                <file>ngs/loads/company/stock/ManageItemsLoad.class.js</file>
+                <file>ngs/loads/company/CompanyProfileLoad.class.js</file>
+                <file>ngs/loads/servicecompany/ServiceCompanyProfileLoad.class.js</file>
+                <file>ngs/loads/company/DealersListLoad.class.js</file>
+                <file>ngs/loads/servicecompany/ServiceDealersListLoad.class.js</file>
+                <file>ngs/loads/company/ItemWarrantyLoad.class.js</file>
+                <file>ngs/loads/company/uploadprice/UploadPriceLoad.class.js</file>
+                <file>ngs/loads/servicecompany/uploadprice/ServiceUploadPriceLoad.class.js</file>
+                <file>ngs/loads/company/uploadprice/NewMailServerDialogLoad.class.js</file>
+                <file>ngs/loads/static/FooterLinksContentLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsMainLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsHomeLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsLoginLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsUsersLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsCompaniesLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsServiceCompaniesLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsAdminsLoad.class.js</file>			
+                <file>ngs/loads/cms/CmsOnlineUsersLoad.class.js</file>			
+				
+            </files>
+        </input>
+    </builder>
+    <builder>
+        <debug>true</debug>
+        <generate_doc package="action">false</generate_doc>
+        <output>
+            <file>out/ngs_actions.js</file>
+            <compress>false</compress>
+        </output>
+        <input>
+            <files>
+                <file doc="true">ngs/actions/AbstractAction.class.js</file>
+                <file >ngs/actions/main/LoginAction.class.js</file>
+                <file >ngs/actions/main/AddCompanyAction.class.js</file>
+                <file >ngs/actions/main/AddServiceCompanyAction.class.js</file>
+                <file >ngs/actions/main/LogoutAction.class.js</file>
+                <file >ngs/actions/main/InviteUserAction.class.js</file>
+                <file >ngs/actions/main/RemoveUserFromUserSubsAction.class.js</file>
+                <file >ngs/actions/main/RemoveUserFromUserInvitedUsersAction.class.js</file>
+                <file >ngs/actions/main/ChangeUserProfileAction.class.js</file>
+                <file >ngs/actions/main/RegisterNewUserAction.class.js</file>
+                <file >ngs/actions/main/UploadCompanyPriceAction.class.js</file>
+                <file >ngs/actions/servicecompany/UploadServiceCompanyPriceAction.class.js</file>
+                <file >ngs/actions/main/TableViewMultiAction.class.js</file>
+                <file >ngs/actions/main/AddChangeItemWarrantyAction.class.js</file>
+                <file >ngs/actions/main/PingPongAction.class.js</file>
+                <file >ngs/actions/main/AddCompanyItemCheckAction.class.js</file>
+                <file >ngs/actions/main/ContactUsAction.class.js</file>
+                <file >ngs/actions/main/checkout/AddToCartAction.class.js</file>
+                <file >ngs/actions/main/checkout/AddConfiguratorBuiltPcToCartAction.class.js</file>				
+                <file >ngs/actions/main/checkout/ConfirmOrderAction.class.js</file>
+                <file >ngs/actions/main/checkout/UpdateCartItemsCountAction.class.js</file>
+                <file >ngs/actions/main/checkout/ConfirmStripePaymentAction.class.js</file>
+                <file >ngs/actions/main/CustomerForgotPasswordAction.class.js</file>
+                <file >ngs/actions/main/SetLanguageAction.class.js</file>
+                <file >ngs/actions/main/AddNewsletterSubscriberAction.class.js</file>
+                <file >ngs/actions/main/CopyItemAction.class.js</file>			
+                <file >ngs/actions/main/PasteItemAction.class.js</file>
+                <file >ngs/actions/main/SoundOnAction.class.js</file>
+                <file >ngs/actions/main/CheckPasswordAction.class.js</file>				
+                <file >ngs/actions/main/SetShowCustomerAfterLoginMessageDontShowNnymoreAction.class.js</file>
+                <file >ngs/actions/main/pcc/PccAfterComponentChangedAction.class.js</file>												
+                <file >ngs/actions/main/pcc/SuggestPcAction.class.js</file>
+                <file >ngs/actions/main/mails/DeleteCustomerLocalEmailsAction.class.js</file>
+                <file >ngs/actions/main/mails/RestoreCustomerLocalEmailsAction.class.js</file>
+                <file >ngs/actions/main/mails/MailsComposeSendAction.class.js</file>
+                <file >ngs/actions/main/UploadAttachmentAction.class.js</file>
+                <file >ngs/actions/main/CompanyGroupActionsAction.class.js</file>			
+                <file >ngs/actions/company/item/ChangeItemDealerPriceAction.class.js</file>				
+                <file >ngs/actions/company/RemoveDealerFromCompanyAction.class.js</file>
+                <file >ngs/actions/servicecompany/RemoveDealerFromServiceCompanyAction.class.js</file>
+                <file >ngs/actions/company/CompanyResposeToItemAvailabilityAction.class.js</file>
+                <file >ngs/actions/company/item/AddChangeItemAction.class.js</file>
+                <file >ngs/actions/company/item/AddRemoveItemPictureAction.class.js</file>
+                <file >ngs/actions/company/item/ChangeItemDealerPriceAmdAction.class.js</file>				
+                <file >ngs/actions/company/item/ChangeItemSpecAction.class.js</file>				
+                <file >ngs/actions/company/item/ChangeItemVatPriceAction.class.js</file>
+                <file >ngs/actions/company/item/ChangeItemVatPriceAmdAction.class.js</file>
+                <file >ngs/actions/company/item/ChangeItemDisplayNameAction.class.js</file>
+                <file >ngs/actions/company/item/ChangeItemPriceOrderIndexAction.class.js</file>
+                <file >ngs/actions/company/ConfirmSmsNumberAction.class.js</file>
+                <file >ngs/actions/company/SetCompanyInterestedCompaniesIdsAction.class.js</file>				
+                <file >ngs/actions/company/SendPriceEmailAction.class.js</file>				
+                <file >ngs/actions/company/FormatPriceEmailRecipientsAction.class.js</file>				
+                <file >ngs/actions/company/ChangeCompanyProfileAction.class.js</file>
+                <file >ngs/actions/company/ChangeServiceCompanyProfileAction.class.js</file>
+                <file >ngs/actions/company/AddRemoveCompanyBranchAction.class.js</file>				
+                <file >ngs/actions/company/AddRemoveServiceCompanyBranchAction.class.js</file>				
+                <file >ngs/actions/company/RevertCompanyLastPriceAction.class.js</file>				
+                <file >ngs/actions/servicecompany/RevertServiceCompanyLastPriceAction.class.js</file>				
+                <file >ngs/actions/admin/IncreaseCompanyExpireItemsAvailablityDaysAction.class.js</file>				
+                <file >ngs/actions/admin/RemoveOrderAction.class.js</file>
+                <file >ngs/actions/admin/RemoveCompanyPriceAction.class.js</file>
+                <file >ngs/actions/admin/ChangeOrderStatusAction.class.js</file>
+                <file >ngs/actions/admin/ChangeCompanyOffersAction.class.js</file>
+                <file >ngs/actions/admin/UpdateLanguagePhraseAction.class.js</file>				
+                <file >ngs/actions/admin/ImportStepsActionsGroupAction.class.js</file>	
+                <file >ngs/actions/admin/CmsconfigActionsGroupAction.class.js</file>	
+                <file >ngs/actions/admin/AddCategoryAction.class.js</file>
+                <file >ngs/actions/admin/ChangeSystemVariablesAction.class.js</file>
+                <file >ngs/actions/admin/AdminCreateAlertAction.class.js</file>
+                <file >ngs/actions/admin/UpdateAllAmdItemsPricesAction.class.js</file>
+                <file >ngs/actions/admin/RemoveCategoryAction.class.js</file>
+                <file >ngs/actions/admin/ChangeCategoryAttributesAction.class.js</file>
+                <file >ngs/actions/admin/ChangeCategoryOrderAction.class.js</file>
+                <file >ngs/actions/admin/RemoveCompanyItemAction.class.js</file>
+                <file >ngs/actions/company/item/ChangeItemHiddenAttributeAction.class.js</file>
+                <file >ngs/actions/admin/ResetCompanyItemsIndexesAction.class.js</file>
+                <file >ngs/actions/admin/HideCompanyItemsAction.class.js</file>
+                <file >ngs/actions/admin/SendNewsletterAction.class.js</file>			
+                <file >ngs/actions/admin/PostItemToListamAction.class.js</file>			
+                <file >ngs/actions/admin/SetPriceGroupAction.class.js</file>			
+                <file >ngs/actions/admin/newsletters/SaveNewsletterAction.class.js</file>			
+                <file >ngs/actions/admin/newsletters/OpenNewsletterAction.class.js</file>			
+                <file >ngs/actions/admin/newsletters/DeleteNewsletterAction.class.js</file>			
+                <file >ngs/actions/admin/AdminGroupActionsAction.class.js</file>			
+                <file >ngs/actions/admin/AdminSetItemCategoriesAction.class.js</file>			
+                <file >ngs/actions/admin/SendSmsAction.class.js</file>			
+            </files>
+        </input>
+    </builder>
+</builders>

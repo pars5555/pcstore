@@ -1,0 +1,69 @@
+.classification { 
+  position: relative;
+  width: 70px;
+  height: 13px;  
+}
+.classification .cover {
+  position: absolute;
+  background: transparent url(../../img/stars.png) top left no-repeat;
+  top: 0px;
+  left: 0px;
+  width: 70px;
+  height: 17px;
+  z-index: 1;
+}
+.classification .progress {
+  position: absolute;
+  background: transparent url(../../img/stars_full.png) top left no-repeat;
+  top: 0px;
+  left: 0px;
+  height: 13px;
+  z-index: 2;
+}
+
+
+.squaredOne {
+    background: -moz-linear-gradient(center top , #FCFFF4 0%, #DFE5D7 40%, #B3BEAD 100%) repeat scroll 0 0 transparent;
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCFFF4', endColorstr='#B3BEAD');
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FCFFF4), to(#B3BEAD));    
+    background: linear-gradient(#FCFFF4, #B3BEAD);
+    box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+    height: 28px;    
+    position: relative;
+    width: 28px;
+}
+.squaredOne label {
+    background: -moz-linear-gradient(center top , #777777 0%, #65686D 100%) repeat scroll 0 0 transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#777777', endColorstr='#65686D');
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#777777), to(#65686D));    
+    background: linear-gradient(#777777, #65686D);
+    
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #FFFFFF;
+    cursor: pointer;
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    width: 20px;
+}
+.squaredOne label:after {
+    background: -moz-linear-gradient(center top , #00BF00 0%, #009400 100%) repeat scroll 0 0 transparent;    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BF00', endColorstr='#009400');
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#00BF00), to(#009400));    
+    background: linear-gradient(#00BF00, #009400);
+    
+    box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+    content: "";
+    height: 16px;
+    left: 2px;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    width: 16px;
+}
+.squaredOne label:hover:after {
+    opacity: 0.3;
+}
+.squaredOne input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}

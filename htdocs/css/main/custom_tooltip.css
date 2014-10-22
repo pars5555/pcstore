@@ -1,0 +1,63 @@
+.tooltip {
+  background: none repeat scroll 0 0 #EAEAEA;
+  color: #222222;
+  cursor: help;
+  display: inline-block;
+  outline: medium none;
+  position: relative;
+  text-decoration: none;  
+}
+.tooltip .tooltip_baloon {
+  background-color: #DDDDDD;
+  font-size: 12px;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border: 2px solid #CCCCCC;
+  border-radius: 4px 4px 4px 4px;
+  bottom: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  left: 40px;
+  right: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  position: absolute;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  visibility: hidden;
+  z-index: 1001;
+}
+.tooltip:hover {
+  border: 0 none;
+}
+.tooltip:hover .tooltip_baloon {
+  visibility: visible;
+}
+.tooltip .tooltip_baloon:before, .tooltip .tooltip_baloon:after {
+  border-color: #DDDDDD transparent -moz-use-text-color;
+  border-style: solid solid none;
+  border-width: 8px 8px 0;
+  bottom: -7px;
+  content: "";
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  z-index: 1002;
+}
+
+.tooltip_baloon ul {
+  list-style-type: square;
+}
+.tooltip .tooltip_baloon:before {
+  border-top-color: #CCCCCC;
+  bottom: -8px;
+}
+.yellow-tooltip .tooltip_baloon {
+  background-color: #FFEAA6;
+  border-color: #E1CA82;
+}
+.yellow-tooltip .tooltip_baloon:after {
+  border-top-color: #FFEAA6;
+}
+.yellow-tooltip .tooltip_baloon:before {
+  border-top-color: #E1CA82;
+}

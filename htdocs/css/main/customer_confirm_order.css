@@ -1,0 +1,14 @@
+.customer_confirm_order_style {
+  width: 600px;
+  height: 300px;  
+  position: fixed;    
+  left: 50%;  
+  top: 50%;
+  margin-left: -300px;
+  margin-top: -150px;
+  background-color: #FFFFFF;
+  text-align: left;
+  border-radius:20px;
+  border: 5px solid #FFF;
+  z-index: 101;  
+}

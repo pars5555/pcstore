@@ -1,0 +1,30 @@
+
+.search_item_title {
+  color: #004B91 !important;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  height: auto;
+  text-decoration: none;
+  width: auto;
+  text-align: left;
+  padding: 4px;
+  display: inline-table;
+  word-wrap: break-word;
+  cursor: pointer;  
+}
+.item_price_style {
+  color: #B00;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.item_instock_style {
+  color: #060;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}

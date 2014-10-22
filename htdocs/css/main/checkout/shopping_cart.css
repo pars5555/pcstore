@@ -1,0 +1,40 @@
+.ui-dialog
+{
+	z-index: 100;
+}
+.bundle_item_expand_button
+{
+  background-image: url(../../../img/checkout/expand_vertical.png);
+  background-position: left;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.bundle_item_collapse_button
+{
+  background-image: url(../../../img/checkout/collapse_vertical.png);
+  background-position: left;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#checkout_steps_container {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+#checkout_steps_container_inner {
+	position: absolute;
+	top: 55px;
+	right: 0px;
+	bottom: 40px;
+	left: 0px;
+	overflow: auto;
+}

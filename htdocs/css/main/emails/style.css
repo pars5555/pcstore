@@ -1,0 +1,34 @@
+.emails_row_container
+{
+    cursor: pointer;
+}
+.emails_row_container.selected
+{
+    background-color:#EEE;   
+}
+.emails_row_container:hover
+{ 
+    background-color:#EEE;
+}
+
+.cm_email_email_element
+{
+    float:left;
+    border: 1px solid #666;
+    border-radius: 3px;
+    height:13px;
+    margin:2px;
+    padding: 2px;    
+}
+
+.ui-resizable-s{
+  background-image:none;
+  background-color:#aaa;
+  border-bottom: 3px;
+}
+.mails_bottom_component
+{
+	background: #fff;
+	min-height: 500px;
+	padding: 10px;
+}

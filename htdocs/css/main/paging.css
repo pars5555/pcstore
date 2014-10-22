@@ -1,0 +1,26 @@
+.navigation_pagination {
+  margin-top:10px;
+  text-align: center;
+}
+
+.navigation_pagination a{
+color: #3366FF;    
+font-size: 14px;
+font-weight: bold;
+margin: 6px;
+padding: 2px 5px 2px 5px;  
+border-radius: 3px 3px 3px 3px; 
+ border: 1px solid #939393;
+ background-color: #FFFFFF;
+}
+ 
+.navigation_pagination span{
+color: #4F4F4F;    
+font-size: 14px;
+font-weight: bold;
+margin: 6px;
+padding: 2px 5px 2px 5px; 
+border-radius: 3px 3px 3px 3px;  
+ border: 1px solid #939393;
+}
+ 

@@ -1,0 +1,53 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTPS} off
+# First rewrite to HTTPS:
+# Don't put www. here. If it is already there it will be included, if not
+# the subsequent rule will catch it.
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Now, rewrite any request to the wrong domain to use www.
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^am(.*)$ /$1/?lang=am [L,QSA]
+RewriteRule ^ru(.*)$ /$1/?lang=ru [L,QSA]
+RewriteRule ^en(.*)$ /$1/?lang=en [L,QSA]
+RewriteRule ^images/(.*)$	/dyn/main/do_get_image/$1/ [L,QSA]
+RewriteRule ^price/(.*)$	/dyn/main/do_get_price_file/$1/ [L,QSA]
+RewriteRule ^item_warranties/(.*)$	/dyn/main/do_get_company_items_warranties/$1/ [L,QSA]
+RewriteRule ^company_item_export/(.*)$	/dyn/main/do_export_company_items/$1/ [L,QSA]
+RewriteRule ^item/(.*)$ /dyn/main/main_site/$1/?p=item [L,QSA]
+RewriteRule ^companies /dyn/main/main_site/$1/?p=companies [L,QSA]
+RewriteRule ^scprofile /dyn/main/main_site/$1/?p=scprofile [L,QSA]
+RewriteRule ^cprofile /dyn/main/main_site/$1/?p=cprofile [L,QSA]
+RewriteRule ^stock /dyn/main/main_site/$1/?p=stock [L,QSA]
+RewriteRule ^configurator/?(.*)$  /dyn/main/main_site/$1/?p=configurator [L,QSA]
+RewriteRule ^upload /dyn/main/main_site/$1/?p=upload [L,QSA]
+RewriteRule ^serviceupload /dyn/main/main_site/$1/?p=serviceupload [L,QSA]
+RewriteRule ^subusers/?(.*)$ /dyn/main/main_site/$1/?p=subusers [L,QSA]
+RewriteRule ^orders /dyn/main/main_site/$1/?p=orders [L,QSA]
+RewriteRule ^uprofile /dyn/main/main_site/$1/?p=uprofile [L,QSA]
+RewriteRule ^warranty /dyn/main/main_site/$1/?p=warranty [L,QSA]
+RewriteRule ^search /dyn/main/main_site/$1/?p=search [L,QSA]
+RewriteRule ^dealers /dyn/main/main_site/$1/?p=dealers [L,QSA]
+RewriteRule ^servicedealers /dyn/main/main_site/$1/?p=servicedealers [L,QSA]
+RewriteRule ^mails/?(.*)$ /dyn/main/main_site/$1/?p=mails&folder=$1 [L,QSA]
+RewriteRule ^registration /dyn/main/main_site/$1/?p=registration [L,QSA]
+RewriteRule ^unsubscribe /dyn/main/newsletter_unsubscribe [L,QSA]
+RewriteRule ^unsub/?(.*)$ /dyn/main/unsubscribe_email_from_company/$1 [L,QSA]
+RewriteRule ^googleaauth2callback$ /dyn/main/newsletter_unsubscribe [L,QSA]
+RewriteRule ^admin/?(.*)$ /dyn/cms/main/$1 [L,QSA]
+
+
+
+RewriteRule ^register(.*)$ /dyn/main/main_site/?p=register [L,QSA]  
+RewriteRule ^help(.*)$ /dyn/main/main_site/?p=help [L,QSA]  
+RewriteRule ^invite(.*)$ /dyn/main/main_site/?p=invite [L,QSA]  
+RewriteRule ^about(.*)$ /dyn/main/main_site/?p=about [L,QSA]  
+RewriteRule ^policy(.*)$ /dyn/main/main_site/?p=policy [L,QSA]  
+
+RewriteRule ^print_invoice(.*)$ /dyn/main/print_invoice [L,QSA] 
+RewriteRule ^print_pcc(.*)$ /dyn/main/print_pcc [L,QSA] 
+RewriteRule ^/?$ /dyn/main/main_site [L,QSA] 
+RewriteRule ^dyn(/.+)?/?$ /index.php?_url=$1 [L,QSA] 

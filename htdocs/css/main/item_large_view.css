@@ -1,0 +1,38 @@
+.fullSpec {
+  overflow: auto;
+}
+.item_title_large_view {
+  color: black;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  text-decoration: none;
+  width: auto;
+  text-align: left;
+  padding: 10px;
+  display: inline-table;
+  word-wrap: break-word;
+}
+.large_view_item_price_style {
+  color: #B00;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 20px;  
+  text-decoration: none;
+}
+
+.large_view_short_description_header_style{
+  color: #FF5C00;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 24px;  
+  text-decoration: none;
+}
+
+
+.large_view_item_instock_style {
+  color: #060;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}

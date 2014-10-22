@@ -1,0 +1,61 @@
+.order_item_div_style {
+  width: 800px;
+  height: 580px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -400px;
+  margin-top: -290px;
+  background-color: #FFFFFF;
+  text-align: left;
+  border-radius: 20px;
+  border: 5px solid #FFF;
+  z-index: 101;
+}
+
+.order_grand_total_price {
+  color: #B00;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.order_grand_total_text_style {
+  color: #000;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.oi_items_titles {
+ color: #004B91;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  width: auto;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  word-wrap: break-word;
+  display: block;  
+  float: left;
+  vertical-align: middle;
+}
+.oi_items_price_style {
+  color: #B00;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;  
+  padding-top: 2px; 
+  padding-bottom: 2px;
+  float: right;
+  width: 130px;
+  text-align: right;
+  color: black;
+  vertical-align: middle;
+}

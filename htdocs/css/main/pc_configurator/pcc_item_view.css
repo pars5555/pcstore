@@ -1,0 +1,25 @@
+.pcc_remove_selected_item_icon{ 
+  min-width:14px;
+  min-height:14px; 
+  width:14px;
+  height:14px;
+  background-image:url("../../../img/remove-icon.png");
+  background-repeat:no-repeat;  
+  float:left;
+  margin-top:16px;
+  margin-left:2px;
+  cursor: pointer;
+}
+
+.pcc_add_item_icon{ 
+  min-width:14px;
+  min-height:14px; 
+  width:14px;
+  height:14px;
+  background-image:url("../../../img/pc_configurator/add-icon_14_14.png");
+  background-repeat:no-repeat;  
+  float:left;
+  margin-top:16px;
+  margin-left:2px;
+  cursor: pointer;
+}

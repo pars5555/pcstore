@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{Request_URI} (^/?$)
+RewriteRule ^(.*)$ /dyn/main/main_site [NS,L,QSA]
+
+RewriteCond %{Request_URI} !(^htdocs/.*$)
+RewriteRule ^(.*)$ htdocs/$1 [NS,L,QSA]

@@ -1,0 +1,142 @@
+@import "../admin/import/import.css";
+
+@import "deals.css";
+@import "jquery.treeview.css";
+@import "home_page.css";
+@import "jquery.lightbox-0.5.css";
+@import "jquery.countdown.css";
+@import "dealers_list.css";
+@import "companies_list.css";
+@import "user_registration.css";
+@import "tree_view.css";
+@import "sub_categories_selection.css";
+@import "manage_items.css";
+@import "search_item_view.css";
+@import "customer_auto_hidden_message_template.css";
+@import "contact_us.css";
+@import "order_item.css";
+@import "customer_confirm_order.css";
+@import "emails/style.css";
+@import "paging.css";
+@import "upload_price.css";
+@import "item_large_view.css";
+@import "header.css";
+@import "custom_tooltip.css";
+@import "you_orders.css";
+@import "pc_configurator.css";
+@import "jquery/smoothness/jquery-ui.css";
+@import "avo_styles.css";
+@import "pc_configurator/pcc_total_calculation.css";
+@import "pc_configurator/pcc_item_view.css";
+@import "checkout/shopping_cart.css";
+@import "checkout/confirm/confirm_cell_phone_number.css";
+@import "elfinder/css/elfinder.min.css";
+@import "grids.css";
+
+
+* {
+    outline: none;
+    margin: 0;
+    border-width: 0;
+}
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    cursor: default;
+    font-size: 11px;
+    line-height: 1;	
+    background: #579bd9 url(../../img/background.png) repeat scroll top left;
+}
+
+tbody tr td, thead tr th {
+    text-align: left;
+    white-space: nowrap;
+}
+
+/*body.winter_background
+{
+    background: url(../../img/winter_background.png) top left;
+    background-repeat: repeat-x;
+}*/
+
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+}
+.dialog_default_button_class{
+    background: url("jquery/smoothness/images/ui-bg_glass_75_blue_1x400.png") repeat-x scroll 50% 50% #000 !important;
+    border: 1px solid #D3D3D3;
+    color: #555555;
+    font-weight: normal;
+}
+
+.customer_alert_dialog
+{
+    position: relative !important;	
+    top: auto !important;
+    left: auto !important;
+
+}
+.customer_alert_dialog_container
+{
+    position: relative;
+    float: right;
+    width: 250px;
+    height:190px;
+
+}
+
+
+/* ----------------------------- */
+.ui-resizable-s {
+    bottom: -1px;
+    height: 3px;
+}
+
+#sc_system_config_tabs.ui-widget-content {
+    height: 100%;
+}
+
+.ui-menu {
+    border-width: 0 1px 1px 0;
+}
+
+.ui-widget {    
+    font-size: 13px !important;
+}
+
+.ui-tabs-panel {
+    padding:0 !important;
+}
+#hp_tabs_container.ui-tabs-nav li {
+    margin: 1px 1px 0 0 !important;
+}
+
+#subscribe_to_newsletter
+{
+    float: left;
+    height: 32px; 
+    width: 32px;
+    border: 0 none;
+    font-size: 0;
+    background-image: url('/img/email.png');
+}
+
+.cna_emails
+{
+    float:left;
+    border: 1px solid #666;
+    border-radius: 3px;
+    height:13px;
+    margin:2px;
+    padding: 2px;    
+}

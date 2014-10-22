@@ -1,0 +1,25 @@
+.pcc_total_calc_item_price_row {
+  width: 100%;
+  float:left;
+  position: relative;
+}
+
+.pcc_total_calc_item_price_row_item_title {
+  float: left;
+  color: black;
+  font-size: 10px;
+  overflow: hidden;
+  padding: 2px;
+  padding-left: 10px;
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pcc_total_calc_item_price_row_item_price {
+  float: right;
+  margin-right: 10px;
+  color: #BB0000;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px;
+}

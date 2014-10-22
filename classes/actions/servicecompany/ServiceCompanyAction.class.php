@@ -8,9 +8,9 @@ require_once (CLASSES_PATH . "/actions/GuestAction.class.php");
  */
 abstract class ServiceCompanyAction extends GuestAction {
 
-	public function getRequestGroup() {
-		return RequestGroups::$serviceCompanyRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$serviceCompanyRequest;
+    }
 
 }
 

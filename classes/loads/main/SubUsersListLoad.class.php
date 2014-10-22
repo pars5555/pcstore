@@ -11,34 +11,34 @@ require_once (CLASSES_PATH . "/managers/UserSubUsersManager.class.php");
  */
 class SubUsersListLoad extends GuestLoad {
 
-	public function load() {
+    public function load() {
 
-		$userManager = UserManager::getInstance($this->config, $this->args);
-		$userSubUsersManager = UserSubUsersManager::getInstance($this->config, $this->args);
-		$userId = $this->getUserId();
+        $userManager = UserManager::getInstance($this->config, $this->args);
+        $userSubUsersManager = UserSubUsersManager::getInstance($this->config, $this->args);
+        $userId = $this->getUserId();
 
-		$subUsersDtos = $userSubUsersManager->getUserSubUsers($userId);
+        $subUsersDtos = $userSubUsersManager->getUserSubUsers($userId);
 
-		$this->addParam("subUsers", $subUsersDtos);
-		$this->addParam("userManager", $userManager);
-	}
+        $this->addParam("subUsers", $subUsersDtos);
+        $this->addParam("userManager", $userManager);
+    }
 
-	public function getDefaultLoads($args) {
-		$loads = array();
-		return $loads;
-	}
+    public function getDefaultLoads($args) {
+        $loads = array();
+        return $loads;
+    }
 
-	public function isValidLoad($namespace, $load) {
-		return true;
-	}
+    public function isValidLoad($namespace, $load) {
+        return true;
+    }
 
-	public function getTemplate() {
-		return TEMPLATES_DIR . "/main/sub_users_list.tpl";
-	}
+    public function getTemplate() {
+        return TEMPLATES_DIR . "/main/sub_users_list.tpl";
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$userRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$userRequest;
+    }
 
 }
 

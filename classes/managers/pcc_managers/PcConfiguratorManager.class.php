@@ -1244,7 +1244,7 @@ class PcConfiguratorManager extends AbstractManager {
         if (!isset($_REQUEST['last_selected_component_id']) || $_REQUEST['last_selected_component_id'] == 0) {
             return;
         }
-        if ($_REQUEST['cpu']) {
+        if (isset($_REQUEST['cpu']) && !empty($_REQUEST['cpu'])) {
             $cpu = $this->secure($_REQUEST['cpu']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1259,7 +1259,7 @@ class PcConfiguratorManager extends AbstractManager {
                 }
             }
         }
-        if ($_REQUEST['cooler']) {
+        if (isset($_REQUEST['cooler']) && !empty($_REQUEST['cooler'])) {
             $cooler = $this->secure($_REQUEST['cooler']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1274,7 +1274,7 @@ class PcConfiguratorManager extends AbstractManager {
                 }
             }
         }
-        if ($_REQUEST['case']) {
+        if (isset($_REQUEST['case']) && !empty($_REQUEST['case'])) {
             $case = $this->secure($_REQUEST['case']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1284,7 +1284,7 @@ class PcConfiguratorManager extends AbstractManager {
                 }
             }
         }
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics']) && !empty($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1294,7 +1294,7 @@ class PcConfiguratorManager extends AbstractManager {
                 }
             }
         }
-        if ($_REQUEST['opts']) {
+        if (isset($_REQUEST['opts']) && !empty($_REQUEST['opts'])) {
             $opts = $this->secure($_REQUEST['opts']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1315,7 +1315,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        if ($_REQUEST['hdds']) {
+        if (isset($_REQUEST['hdds']) && !empty($_REQUEST['hdds'])) {
             $hdds = $this->secure($_REQUEST['hdds']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1336,7 +1336,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        if ($_REQUEST['ssds']) {
+        if (isset($_REQUEST['ssds']) && !empty($_REQUEST['ssds'])) {
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
             if ($lastSelectedComponentTypeIndex == PcConfiguratorManager::$PCC_COMPONENTS['mb']) {
@@ -1353,7 +1353,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb']) && !empty($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1394,7 +1394,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        if ($_REQUEST['rams']) {
+        if (isset($_REQUEST['rams']) && !empty($_REQUEST['rams'])) {
             $rams = $this->secure($_REQUEST['rams']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1419,7 +1419,7 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics']) && !empty($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $lastSelectedComponentTypeIndex = $this->secure($_REQUEST['last_selected_component_type_index']);
             $lastSelectedComponentId = $this->secure($_REQUEST['last_selected_component_id']);
@@ -1605,12 +1605,12 @@ class PcConfiguratorManager extends AbstractManager {
      * mutliselect items ids are in subarrays
      */
     public function getSelectedItemsIdsFromRequest() {
-        $csse = $this->secure($_REQUEST["case"]);
+        $case = isset($_REQUEST["case"]) ? $this->secure($_REQUEST["case"]) : null;
 
 
-        $mb = $this->secure($_REQUEST["mb"]);
+        $mb = isset($_REQUEST["mb"]) ? $this->secure($_REQUEST["mb"]) : null;
 
-        $rams = $this->secure($_REQUEST["rams"]);
+        $rams = isset($_REQUEST["rams"]) ? $this->secure($_REQUEST["rams"]) : null;
         if (isset($rams) && strlen($rams) > 0) {
             if (strpos($rams, ',') !== false) {
                 $rams = explode(',', $rams);
@@ -1620,8 +1620,8 @@ class PcConfiguratorManager extends AbstractManager {
         } else {
             unset($rams);
         }
-        $cpu = $this->secure($_REQUEST["cpu"]);
-        $hdds = $this->secure($_REQUEST["hdds"]);
+        $cpu = isset($_REQUEST["cpu"]) ? $this->secure($_REQUEST["cpu"]) : null;
+        $hdds = isset($_REQUEST["hdds"]) ? $this->secure($_REQUEST["hdds"]) : null;
         if (isset($hdds) && strlen($hdds) > 0) {
             if (strpos($hdds, ',') !== false) {
                 $hdds = explode(',', $hdds);
@@ -1631,7 +1631,7 @@ class PcConfiguratorManager extends AbstractManager {
         } else {
             unset($hdds);
         }
-        $ssds = $this->secure($_REQUEST["ssds"]);
+        $ssds = isset($_REQUEST["ssds"]) ? $this->secure($_REQUEST["ssds"]) : null;
         if (isset($ssds) && strlen($ssds) > 0) {
             if (strpos($ssds, ',') !== false) {
                 $ssds = explode(',', $ssds);
@@ -1641,10 +1641,10 @@ class PcConfiguratorManager extends AbstractManager {
         } else {
             unset($ssds);
         }
-        $cooler = $this->secure($_REQUEST["cooler"]);
-        $monitor = $this->secure($_REQUEST["monitor"]);
+        $cooler = isset($_REQUEST["cooler"]) ? $this->secure($_REQUEST["cooler"]) : null;
+        $monitor = isset($_REQUEST["monitor"]) ? $this->secure($_REQUEST["monitor"]) : null;
 
-        $graphics = $this->secure($_REQUEST["graphics"]);
+        $graphics = isset($_REQUEST["graphics"]) ? $this->secure($_REQUEST["graphics"]) : null;
         if (isset($graphics) && strlen($graphics) > 0) {
             if (strpos($graphics, ',') !== false) {
                 $graphics = explode(',', $graphics);
@@ -1656,7 +1656,7 @@ class PcConfiguratorManager extends AbstractManager {
         }
 
 
-        $opts = $this->secure($_REQUEST["opts"]);
+        $opts = isset($_REQUEST["opts"]) ? $this->secure($_REQUEST["opts"]) : null;
         if (isset($opts) && strlen($opts) > 0) {
             if (strpos($opts, ',') !== false) {
                 $opts = explode(',', $opts);
@@ -1667,12 +1667,12 @@ class PcConfiguratorManager extends AbstractManager {
             unset($opts);
         }
 
-        $power = $this->secure($_REQUEST["power"]);
-        $keyboard = $this->secure($_REQUEST["keyboard"]);
-        $mouse = $this->secure($_REQUEST["mouse"]);
-        $speaker = $this->secure($_REQUEST["speaker"]);
-        $this->validateComponents($csse, $cpu, $mb, $cooler, $rams, $hdds, $ssds, $opts, $monitor, $graphics, $power, $keyboard, $mouse, $speaker);
-        return array($csse, $cpu, $mb, $cooler, $rams, $hdds, $ssds, $opts, $monitor, $graphics, $power, $keyboard, $mouse, $speaker);
+        $power = isset($_REQUEST["power"]) ? $this->secure($_REQUEST["power"]) : null;
+        $keyboard = isset($_REQUEST["keyboard"]) ? $this->secure($_REQUEST["keyboard"]) : null;
+        $mouse = isset($_REQUEST["mouse"]) ? $this->secure($_REQUEST["mouse"]) : null;
+        $speaker = isset($_REQUEST["speaker"]) ? $this->secure($_REQUEST["speaker"]) : null;
+        $this->validateComponents($case, $cpu, $mb, $cooler, $rams, $hdds, $ssds, $opts, $monitor, $graphics, $power, $keyboard, $mouse, $speaker);
+        return array($case, $cpu, $mb, $cooler, $rams, $hdds, $ssds, $opts, $monitor, $graphics, $power, $keyboard, $mouse, $speaker);
     }
 
     public function validateComponents(&$case, &$cpu, &$mb, &$cooler, &$rams, &$hdds, &$ssds, &$opts, &$monitor, &$graphics, &$power, &$keyboard, &$mouse, &$speaker) {
@@ -1764,15 +1764,17 @@ class PcConfiguratorManager extends AbstractManager {
 
         $userLevel = $user->getLevel();
         $user_id = $user->getId();
+        $selectedCaseDto = null;
         if (intval($case) > 0) {
             $selectedCaseDto = $this->itemManager->getItemsForOrder($case, $user_id, $userLevel);
         }
+        $selectedMbDto = null;
         if (intval($mb) > 0) {
             $selectedMbDto = $this->itemManager->getItemsForOrder($mb, $user_id, $userLevel);
         }
 
+        $selectedRamsDto = null;
         if (isset($rams)) {
-
             $selectedRamsDto = array();
             foreach ($rams as $key => $ram) {
                 if (intval($ram) > 0) {
@@ -1784,10 +1786,13 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
-        $selectedCpuDto = $this->itemManager->getItemsForOrder($cpu, $user_id, $userLevel);
+        $selectedCpuDto = null;
+        if (intval($cpu) > 0) {
+            $selectedCpuDto = $this->itemManager->getItemsForOrder($cpu, $user_id, $userLevel);
+        }
 
+        $selectedHddsDto = null;
         if (isset($hdds)) {
-
             $selectedHddsDto = array();
             foreach ($hdds as $key => $hdd) {
                 if (intval($hdd) > 0) {
@@ -1799,8 +1804,8 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
+        $selectedSsdsDto = null;
         if (isset($ssds)) {
-
             $selectedSsdsDto = array();
             foreach ($ssds as $key => $ssd) {
                 if (intval($ssd) > 0) {
@@ -1812,12 +1817,17 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
+        $selectedCoolerDto = null;
         if (intval($cooler) > 0) {
             $selectedCoolerDto = $this->itemManager->getItemsForOrder($cooler, $user_id, $userLevel);
         }
+
+        $selectedMonitorDto = null;
         if (intval($monitor) > 0) {
             $selectedMonitorDto = $this->itemManager->getItemsForOrder($monitor, $user_id, $userLevel);
         }
+
+        $selectedGraphicsDto = null;
         if (isset($graphics)) {
             $selectedGraphicsDto = array();
 
@@ -1831,6 +1841,8 @@ class PcConfiguratorManager extends AbstractManager {
             }
         }
 
+
+        $selectedOptsDto = null;
         if (isset($opts)) {
 
             $selectedOptsDto = array();
@@ -1843,15 +1855,23 @@ class PcConfiguratorManager extends AbstractManager {
                 $selectedOptsDto = $selectedOptsDto[0];
             }
         }
+
+        $selectedPowerDto = null;
         if (intval($power) > 0) {
             $selectedPowerDto = $this->itemManager->getItemsForOrder($power, $user_id, $userLevel);
         }
+
+        $selectedKeyDto = null;
         if (intval($keyboard) > 0) {
             $selectedKeyDto = $this->itemManager->getItemsForOrder($keyboard, $user_id, $userLevel);
         }
+
+        $selectedMouseDto = null;
         if (intval($mouse) > 0) {
             $selectedMouseDto = $this->itemManager->getItemsForOrder($mouse, $user_id, $userLevel);
         }
+
+        $selectedSpeakerDto = null;
         if (intval($speaker) > 0) {
             $selectedSpeakerDto = $this->itemManager->getItemsForOrder($speaker, $user_id, $userLevel);
         }

@@ -59,7 +59,6 @@ class LanguageManager extends AbstractManager {
         return self::$instance;
     }
 
-
     public function getPhrase($phraseFormula, $lang_code = null, $transform = 0) {
 
         $lc = 'en';

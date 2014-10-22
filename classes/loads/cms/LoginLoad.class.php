@@ -10,13 +10,12 @@ require_once (CLASSES_PATH . "/loads/GuestLoad.class.php");
 class LoginLoad extends GuestLoad {
 
     public function load() {
+        
     }
-
 
     public function getTemplate() {
         return TEMPLATES_DIR . "/cms/login.tpl";
     }
-
 
 }
 

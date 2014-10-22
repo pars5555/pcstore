@@ -9,26 +9,26 @@ require_once (CLASSES_PATH . "/managers/UserSubUsersManager.class.php");
  */
 class RemoveUserFromUserSubsAction extends GuestAction {
 
-	public function service() {
-		$userSubUsersManager = new UserSubUsersManager($this->config, $this->args);
-		$subUserId = $userSubUsersManager->secure($_REQUEST["user_id"]);
-		$userId = $this->sessionManager->getUser()->getId();
+    public function service() {
+        $userSubUsersManager = new UserSubUsersManager($this->config, $this->args);
+        $subUserId = $userSubUsersManager->secure($_REQUEST["user_id"]);
+        $userId = $this->sessionManager->getUser()->getId();
 
-		if ($userSubUsersManager->getByUserIdAndSubUserId($userId, $subUserId)) {
-			$userSubUsersManager->removeSubUserFromUser($subUserId, $userId);
-			$jsonArr = array('status' => "ok", "message" => "Sub user removed!");
-			echo json_encode($jsonArr);
-			return true;
-		} else {
-			$jsonArr = array('status' => "err", "errText" => "System Error: Sub user dosn't exist in your sub users list!");
-			echo json_encode($jsonArr);
-			return false;
-		}
-	}
+        if ($userSubUsersManager->getByUserIdAndSubUserId($userId, $subUserId)) {
+            $userSubUsersManager->removeSubUserFromUser($subUserId, $userId);
+            $jsonArr = array('status' => "ok", "message" => "Sub user removed!");
+            echo json_encode($jsonArr);
+            return true;
+        } else {
+            $jsonArr = array('status' => "err", "errText" => "System Error: Sub user dosn't exist in your sub users list!");
+            echo json_encode($jsonArr);
+            return false;
+        }
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$userRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$userRequest;
+    }
 
 }
 

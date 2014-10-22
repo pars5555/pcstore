@@ -1,4 +1,5 @@
 <?php
+
 require_once (CLASSES_PATH . "/actions/GuestAction.class.php");
 require_once (CLASSES_PATH . "/managers/NewsletterSubscribersManager.class.php");
 
@@ -18,8 +19,9 @@ class AddNewsletterSubscriberAction extends GuestAction {
             $this->error(array('message' => $this->getPhraseSpan(359)));
         }
         $newsletterSubscribersManager->addSubscriber($email);
-        $this->ok(array('message' =>$this->getPhraseSpan(606)));
+        $this->ok(array('message' => $this->getPhraseSpan(606)));
     }
+
 }
 
 ?>

@@ -56,7 +56,7 @@ class PriceSheetsManager extends AbstractManager {
         return self::$instance;
     }
 
-    public function addRow($companyId,$priceIndex,  $sheetTitle, $visible) {
+    public function addRow($companyId, $priceIndex, $sheetTitle, $visible) {
         $dto = $this->mapper->createDto();
         $dto->setCompanyId($companyId);
         $dto->setPriceIndex($priceIndex);

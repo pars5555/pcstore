@@ -41,7 +41,7 @@ class SessionManager extends AbstractSessionManager {
 
         try {
             if (isset($_COOKIE["ut"])) {
-                if ($_COOKIE["uh"] && $_COOKIE["ud"]) {
+                if (isset($_COOKIE["uh"]) && isset($_COOKIE["ud"])) {
                     if ($_COOKIE["ut"] == UserGroups::$USER) {
                         $user = new CustomerUser($_COOKIE["ud"]);
                     } else if ($_COOKIE["ut"] == UserGroups::$ADMIN) {
@@ -53,7 +53,7 @@ class SessionManager extends AbstractSessionManager {
                     }
                 }
             }
-            if ($user && $user->validate($_COOKIE["uh"])) {
+            if (isset($user) && $user->validate($_COOKIE["uh"])) {
                 $this->user = $user;
             }
 

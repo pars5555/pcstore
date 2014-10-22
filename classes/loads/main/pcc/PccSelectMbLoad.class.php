@@ -23,7 +23,7 @@ class PccSelectMbLoad extends PccSelectComponentLoad {
     }
 
     public function getSelectedSameItemsCount() {
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             return 1;
         } else {
             return 0;
@@ -36,40 +36,40 @@ class PccSelectMbLoad extends PccSelectComponentLoad {
 
     public function getNeededCategoriesIdsAndOrFormulaArray() {
         $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
-        if ($_REQUEST['case']) {
+        if (isset($_REQUEST['case'])) {
             $case = $this->secure($_REQUEST['case']);
             $case_size = $pccm->getCaseSize($case);
         }
 
-        if ($_REQUEST['cpu']) {
+        if (isset($_REQUEST['cpu'])) {
             $cpu = $this->secure($_REQUEST['cpu']);
             $cpu_socket = $pccm->getCpuSocket($cpu);
         }
 
-        if ($_REQUEST['rams']) {
+        if (isset($_REQUEST['rams'])) {
             $rams = $this->secure($_REQUEST['rams']);
             $rams = explode(',', $rams);
             $ram_type = $pccm->getRamType($rams[0]);
             $total_rams_count = $pccm->getTotalRamsCount($rams);
         }
 
-        if ($_REQUEST['cooler']) {
+        if (isset($_REQUEST['cooler'])) {
             $cooler = $this->secure($_REQUEST['cooler']);
             $cooler_sockets = $pccm->getCoolerSockets($cooler);
         }
 
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $graphics_interface = $pccm->getGraphicsInterface($graphics);
         }
 
-        if ($_REQUEST['hdds']) {
+        if (isset($_REQUEST['hdds'])) {
             $hdds = $this->secure($_REQUEST['hdds']);
             $hdds = explode(',', $hdds);
             $hdd_interface = $pccm->getHddsInterfaces($hdds);
         }
 
-        if ($_REQUEST['opts']) {
+        if (isset($_REQUEST['opts'])) {
             $opts = $this->secure($_REQUEST['opts']);
             $opts = explode(',', $opts);
             $opt_interface = $pccm->getOptsInterfaces($opts);
@@ -640,7 +640,7 @@ class PccSelectMbLoad extends PccSelectComponentLoad {
 
     public function getSelectedComponentItemId() {
         $mb = null;
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
             $this->addParam('selected_component_id', $mb);
         }

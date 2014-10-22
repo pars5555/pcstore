@@ -8,14 +8,14 @@ require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
  */
 class RemoveOldOnlineUsersAction extends GuestAction {
 
-	public function service() {
-		$onlineUsersManager = new OnlineUsersManager($this->config, $this->args);
-		$onlineUsersManager->removeTimeOutedUsers(180); //3 minutes		
-	}
+    public function service() {
+        $onlineUsersManager = new OnlineUsersManager($this->config, $this->args);
+        $onlineUsersManager->removeTimeOutedUsers(180); //3 minutes		
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$guestRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$guestRequest;
+    }
 
 }
 

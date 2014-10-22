@@ -22,7 +22,7 @@ class ServiceCompanyUser extends AuthenticateUser {
 	public function __construct($id) {
 		parent::__construct($id);
 		$this->setCookieParam("ut", UserGroups::$SERVICE_COMPANY);
-		$this->serviceCompanyManager = ServiceCompanyManager::getInstance($this->config, $this->args);
+		$this->serviceCompanyManager = ServiceCompanyManager::getInstance(null, null);
 	}
 
 	public function setUniqueId($uniqueId, $updateDb = true) {

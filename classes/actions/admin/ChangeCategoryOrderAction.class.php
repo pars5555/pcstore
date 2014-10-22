@@ -8,21 +8,21 @@ require_once (CLASSES_PATH . "/managers/CategoryHierarchyManager.class.php");
  */
 class ChangeCategoryOrderAction extends AdminAction {
 
-	public function service() {
+    public function service() {
 
-		$categoryHierarchyManager = new CategoryHierarchyManager($this->config, $this->args);
-		$move_up = $this->secure($_REQUEST["move_up"]);
-		$categoryId = $this->secure($_REQUEST["category_id"]);
+        $categoryHierarchyManager = new CategoryHierarchyManager($this->config, $this->args);
+        $move_up = $this->secure($_REQUEST["move_up"]);
+        $categoryId = $this->secure($_REQUEST["category_id"]);
 
-		if ($move_up == '1') {
-			$categoryHierarchyManager->MoveCategoryOrderUp($categoryId);
-		} else {
-			$categoryHierarchyManager->MoveCategoryOrderDown($categoryId);
-		}
-		$jsonArr = array('status' => "ok", "message" => "ok");
-		echo json_encode($jsonArr);
-		return true;
-	}
+        if ($move_up == '1') {
+            $categoryHierarchyManager->MoveCategoryOrderUp($categoryId);
+        } else {
+            $categoryHierarchyManager->MoveCategoryOrderDown($categoryId);
+        }
+        $jsonArr = array('status' => "ok", "message" => "ok");
+        echo json_encode($jsonArr);
+        return true;
+    }
 
 }
 

@@ -12,66 +12,66 @@ require_once (CLASSES_PATH . "/dal/mappers/EmailAccountsMapper.class.php");
  */
 class EmailAccountsManager extends AbstractManager {
 
-	/**
-	 * @var app config
-	 */
-	private $config;
+    /**
+     * @var app config
+     */
+    private $config;
 
-	/**
-	 * @var passed arguemnts
-	 */
-	private $args;
+    /**
+     * @var passed arguemnts
+     */
+    private $args;
 
-	/**
-	 * @var singleton instance of class
-	 */
-	private static $instance = null;
+    /**
+     * @var singleton instance of class
+     */
+    private static $instance = null;
 
-	/**
-	 * Initializes DB mappers
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	function __construct($config, $args) {
-		$this->mapper = EmailAccountsMapper::getInstance();
-		$this->config = $config;
-		$this->args = $args;
-	}
+    /**
+     * Initializes DB mappers
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    function __construct($config, $args) {
+        $this->mapper = EmailAccountsMapper::getInstance();
+        $this->config = $config;
+        $this->args = $args;
+    }
 
-	/**
-	 * Returns an singleton instance of this class
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	public static function getInstance($config, $args) {
+    /**
+     * Returns an singleton instance of this class
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    public static function getInstance($config, $args) {
 
-		if (self::$instance == null) {
+        if (self::$instance == null) {
 
-			self::$instance = new EmailAccountsManager($config, $args);
-		}
-		return self::$instance;
-	}
+            self::$instance = new EmailAccountsManager($config, $args);
+        }
+        return self::$instance;
+    }
 
-	public function getEmailAccountsIds() {
-		$ret = array();
-		$allDtos = $this->mapper->selectAll();
-		foreach ($allDtos as $dto) {
-			$ret[] = $dto->getId();
-		}
-		return $ret;
-	}
+    public function getEmailAccountsIds() {
+        $ret = array();
+        $allDtos = $this->mapper->selectAll();
+        foreach ($allDtos as $dto) {
+            $ret[] = $dto->getId();
+        }
+        return $ret;
+    }
 
-	public function getEmailAddressById($id) {
-		$dto = $this->mapper->selectByPK($id);
-		if (isset($dto)) {
-			return $dto->getLogin();
-		}
-		return '';
-	}
+    public function getEmailAddressById($id) {
+        $dto = $this->mapper->selectByPK($id);
+        if (isset($dto)) {
+            return $dto->getLogin();
+        }
+        return '';
+    }
 
 }
 

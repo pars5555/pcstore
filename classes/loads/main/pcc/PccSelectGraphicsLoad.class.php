@@ -28,7 +28,7 @@ class PccSelectGraphicsLoad extends PccSelectComponentLoad {
 
     public function getNeededCategoriesIdsAndOrFormulaArray() {
         $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
             $motherboard_graphics_slot = $pccm->getMbGraphicsInterface($mb);
         }
@@ -51,7 +51,7 @@ class PccSelectGraphicsLoad extends PccSelectComponentLoad {
     }
 
     public function getSelectedItemCount($item) {
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $graphics = ',' . $graphics . ',';
             return substr_count($graphics, $item->getId());
@@ -62,7 +62,7 @@ class PccSelectGraphicsLoad extends PccSelectComponentLoad {
 
     public function getSelectedComponentItemId() {
         $graphics = null;
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $this->addParam('selected_components_ids_str', $graphics);
             $graphics = explode(',', $graphics);
@@ -74,7 +74,7 @@ class PccSelectGraphicsLoad extends PccSelectComponentLoad {
     }
 
     public function getComponentMaxPossibleCount($item) {
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
         }
         $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
@@ -90,7 +90,7 @@ class PccSelectGraphicsLoad extends PccSelectComponentLoad {
     }
 
     public function getSelectedSameItemsCount() {
-        if ($_REQUEST['graphics']) {
+        if (isset($_REQUEST['graphics'])) {
             $graphics = $this->secure($_REQUEST['graphics']);
             $graphics = explode(',', $graphics);
             $graphics = array_unique($graphics);

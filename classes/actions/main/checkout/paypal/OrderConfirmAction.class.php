@@ -15,7 +15,7 @@ class OrderConfirmAction extends GuestAction {
         $ordersManager = OrdersManager::getInstance($this->config, $this->args);
         $orderBy3rdPartyToken = $ordersManager->getOrderBy3rdPartyToken($token);
         if (!isset($orderBy3rdPartyToken)) {
-            $_SESSION['error_message'] = $this->getPhrase(595);            
+            $_SESSION['error_message'] = $this->getPhrase(595);
             $this->redirect('orders');
         }
         $paypalTransactionsManager = PaypalTransactionsManager::getInstance($this->config, $this->args);
@@ -82,7 +82,7 @@ class OrderConfirmAction extends GuestAction {
             $ret .=". Error Code: " . $ErrorCode;
             $ret .=". Error Severity Code: " . $ErrorSeverityCode;
             return $ret;
-        }       
+        }
     }
 
     private function confirmOrder() {
@@ -149,7 +149,7 @@ class OrderConfirmAction extends GuestAction {
             $ret .=". Error Code: " . $ErrorCode;
             $ret .=". Error Severity Code: " . $ErrorSeverityCode;
             return $ret;
-        }       
+        }
     }
 
     public function getRequestGroup() {

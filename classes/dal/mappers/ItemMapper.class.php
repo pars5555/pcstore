@@ -148,10 +148,7 @@ class ItemMapper extends AbstractMapper {
                                             LEFT JOIN `online_users` ON `companies`.`email` = `online_users`.`email`
                                             WHERE %s %s %s %s %s %s %s `items`.`hidden`=0  GROUP BY `items`.`id` %s %s %s";
 
-    public function searchItemsByTitle($user_id, $userLevel, $profitFormula, $search_text, $companyId, $price_range_min, $price_range_max, 
-            $selectedCategory, $groupedProperties, $show_only_vat_items, 
-            $show_only_non_picture_items, $show_only_no_short_spec_items,$show_only_no_full_spec_items, 
-            $offset, $limit, $orderByFieldName, $countOnly = false) {
+    public function searchItemsByTitle($user_id, $userLevel, $profitFormula, $search_text, $companyId, $price_range_min, $price_range_max, $selectedCategory, $groupedProperties, $show_only_vat_items, $show_only_non_picture_items, $show_only_no_short_spec_items, $show_only_no_full_spec_items, $offset, $limit, $orderByFieldName, $countOnly = false) {
 
         $join_company_dealers_table_for_user_only = "";
         $add_is_dealer_of_this_company = "";
@@ -231,7 +228,7 @@ class ItemMapper extends AbstractMapper {
         if ($show_only_no_full_spec_items == 1) {
             $showOnlyNoFullSpecItemsSubQuery = "NULLIF(`items`.`full_description`, '') IS NULL AND";
         }
-        
+
         $only_vat_items_query = "";
         if ($show_only_vat_items == 1) {
             $only_vat_items_query = "`items`.`vat_price`>0 AND";
@@ -263,12 +260,12 @@ class ItemMapper extends AbstractMapper {
 
 
         if (!$countOnly) {
-            $sqlQuery = sprintf(self::$SEARCH_ITEMS_BY_TITLE, $text_serch_query_part1, $add_is_dealer_of_this_company, $add_customer_price_field, $this->getTableName(), $join_company_dealers_table_for_user_only, $text_serch_query_part2, $sub_query_1, $sub_query_4, $only_vat_items_query, $showOnlyNonPicturesItemsSubQuery, $showOnlyNoShortSpecItemsSubQuery,$showOnlyNoFullSpecItemsSubQuery, $sub_query_2, $sub_query_3, $order_by_query) . ' LIMIT ' . $offset . ', ' . $limit;            
+            $sqlQuery = sprintf(self::$SEARCH_ITEMS_BY_TITLE, $text_serch_query_part1, $add_is_dealer_of_this_company, $add_customer_price_field, $this->getTableName(), $join_company_dealers_table_for_user_only, $text_serch_query_part2, $sub_query_1, $sub_query_4, $only_vat_items_query, $showOnlyNonPicturesItemsSubQuery, $showOnlyNoShortSpecItemsSubQuery, $showOnlyNoFullSpecItemsSubQuery, $sub_query_2, $sub_query_3, $order_by_query) . ' LIMIT ' . $offset . ', ' . $limit;
             $result = $this->fetchRows($sqlQuery);
 
             return $result;
         } else {
-            $sqlQuery = sprintf(self::$SEARCH_ITEMS_BY_TITLE, $text_serch_query_part1, $add_is_dealer_of_this_company, $add_customer_price_field, $this->getTableName(), $join_company_dealers_table_for_user_only, $text_serch_query_part2, $sub_query_1, $sub_query_4, $only_vat_items_query, $showOnlyNonPicturesItemsSubQuery, $showOnlyNoShortSpecItemsSubQuery,$showOnlyNoFullSpecItemsSubQuery, $sub_query_2, $sub_query_3, $order_by_query);
+            $sqlQuery = sprintf(self::$SEARCH_ITEMS_BY_TITLE, $text_serch_query_part1, $add_is_dealer_of_this_company, $add_customer_price_field, $this->getTableName(), $join_company_dealers_table_for_user_only, $text_serch_query_part2, $sub_query_1, $sub_query_4, $only_vat_items_query, $showOnlyNonPicturesItemsSubQuery, $showOnlyNoShortSpecItemsSubQuery, $showOnlyNoFullSpecItemsSubQuery, $sub_query_2, $sub_query_3, $order_by_query);
             $baseQuery = sprintf("SELECT `items_table_alias`.`categories_ids` as `categories_ids`,
                     `items_table_alias`.`id` as `id`				
                     FROM (%s) as `items_table_alias`", $sqlQuery);
@@ -464,7 +461,7 @@ class ItemMapper extends AbstractMapper {
             $categories_filter_query = $this->makeCategoriesIdsAndOrFormulaArrayQuery($neededCategoriesIdsAndOrFormulaArray);
         }
 
-
+        $selected_items_sql_always_in_result = '';
         if (!empty($selected_items_sql_array_str)) {
             $selected_items_sql_always_in_result = " `items`.`id` IN " . $selected_items_sql_array_str . " OR ";
             $selected_items_sql_array_str = "case when `items`.`id` IN $selected_items_sql_array_str then 0 else 1 end,";
@@ -474,6 +471,7 @@ class ItemMapper extends AbstractMapper {
         if ($showOutOfDateItems !== true) {
             $showOutOfDateItemsQuery = "AND item_available_till_date >= '" . date('Y-m-d') . "'";
         }
+        $text_serch_query = '';
         if (!empty($search_text)) {
             $search_text_formated_for_using_in_regext = $this->formatSearchTextForUsingInRegexp($search_text);
             $search_text_formated_for_match = $this->formatSearchTextForUsingInMatch($search_text);
@@ -500,6 +498,7 @@ class ItemMapper extends AbstractMapper {
         if ($showOutOfDateItems !== true) {
             $showOutOfDateItemsQuery = "AND item_available_till_date >= '" . date('Y-m-d') . "'";
         }
+        $text_serch_query = '';
         if (!empty($search_text)) {
             $search_text_formated_for_using_in_regext = $this->formatSearchTextForUsingInRegexp($search_text);
             $search_text_formated_for_match = $this->formatSearchTextForUsingInMatch($search_text);
@@ -552,7 +551,7 @@ class ItemMapper extends AbstractMapper {
             } else if (strtolower($el) === ':') {
                 $subquery .= ' as ';
                 $nextElementIsFieldName = true;
-            } else if ($nextElementIsFieldName === true) {
+            } else if (isset($nextElementIsFieldName) && $nextElementIsFieldName === true) {
                 $categories_filter_query .= $subquery . $el . ', ';
                 $nextElementIsFieldName = false;
                 $pcc_item_compatible .= '(' . substr($subquery, 0, strlen($subquery) - 3) . ' ) = 1 AND';
@@ -591,11 +590,11 @@ class ItemMapper extends AbstractMapper {
 
         return $result;
     }
-   
+
     public static $GET_HIDDEN_BY_MONTHS = "SELECT `id` FROM `%s` WHERE hidden=1 AND `item_available_till_date`<'%s'";
 
     public function getHiddenItemsByMonthsNumber($monthsNumber) {
-        $date = date("Y-m-d",strtotime("-".$monthsNumber." month"));
+        $date = date("Y-m-d", strtotime("-" . $monthsNumber . " month"));
         $sqlQuery = sprintf(self::$GET_HIDDEN_BY_MONTHS, $this->getTableName(), $date);
         $result = $this->fetchRows($sqlQuery);
         return $result;

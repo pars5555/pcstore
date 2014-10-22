@@ -45,20 +45,18 @@ class UploadAttachmentAction extends GuestAction {
         if (!is_dir($dir)) {
             mkdir($dir, 0777);
         }
-        if ($userLevel == UserGroups::$COMPANY)
-        {
+        if ($userLevel == UserGroups::$COMPANY) {
             $subDir = 'companies';
-        }else
-        {
+        } else {
             $subDir = 'service_companies';
         }
 
-        $dir = HTDOCS_TMP_DIR_ATTACHMENTS . '/'.$subDir.'/';
+        $dir = HTDOCS_TMP_DIR_ATTACHMENTS . '/' . $subDir . '/';
         if (!is_dir($dir)) {
             mkdir($dir, 0777);
         }
 
-        $dir = HTDOCS_TMP_DIR_ATTACHMENTS . '/'.$subDir.'/' . $companyId . '/';
+        $dir = HTDOCS_TMP_DIR_ATTACHMENTS . '/' . $subDir . '/' . $companyId . '/';
         if (!is_dir($dir)) {
             mkdir($dir, 0777);
         }
@@ -72,7 +70,7 @@ class UploadAttachmentAction extends GuestAction {
             case 'jpg':
             case 'jpeg':
             case 'png':
-                $attachmentIconPathToShowInFrontend = '/tmp/attachments/'.$subDir.'/' . $companyId . '/' . $newFileName . '.' . $newFileExt;
+                $attachmentIconPathToShowInFrontend = '/tmp/attachments/' . $subDir . '/' . $companyId . '/' . $newFileName . '.' . $newFileExt;
                 break;
             default :
                 $attachmentIconPathToShowInFrontend = '/img/file_types_icons/' . $newFileExt . "_icon.png";
@@ -204,7 +202,6 @@ class UploadAttachmentAction extends GuestAction {
         }
         return $ret;
     }
-
 
     function createZip($source, $destination) {
         $zip = new ZipArchive();

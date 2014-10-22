@@ -13,17 +13,16 @@ class ChangeItemSpecAction extends CompanyAction {
         $item_id = $this->secure($_REQUEST["item_id"]);
         $spec = $_REQUEST["spec"];
         $shortSpec = false;
-        if (isset($_REQUEST["short_spec"]))
-        {
-            $shortSpec  = true;
+        if (isset($_REQUEST["short_spec"])) {
+            $shortSpec = true;
         }
-        
+
 
         $itemManager = ItemManager::getInstance($this->config, $this->args);
         $itemDto = $itemManager->selectByPK($item_id);
 
         if ($itemDto != null) {
-            $itemManager->updateTextField($item_id, $shortSpec?"short_description":"full_description", $spec);
+            $itemManager->updateTextField($item_id, $shortSpec ? "short_description" : "full_description", $spec);
             $jsonArr = array('status' => "ok", "item_id" => $item_id);
             echo json_encode($jsonArr);
             return true;

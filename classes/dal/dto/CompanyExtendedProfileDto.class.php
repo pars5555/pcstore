@@ -10,8 +10,8 @@ require_once (CLASSES_PATH . "/dal/dto/AbstractDto.class.php");
 class CompanyExtendedProfileDto extends AbstractDto {
 
     // Map of DB value to Field value
-    protected $mapArray = array("id" => "id", 
-        "company_id" => "companyId", 
+    protected $mapArray = array("id" => "id",
+        "company_id" => "companyId",
         "dealer_emails" => "dealerEmails",
         "unsubscribed_emails" => "unsubscribedEmails",
         "from_email" => "fromEmail",

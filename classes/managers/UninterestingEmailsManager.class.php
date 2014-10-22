@@ -55,16 +55,14 @@ class UninterestingEmailsManager extends AbstractManager {
         }
         return self::$instance;
     }
-    
-    public function removeUninterestingEmailsFromList($emails)
-    {
+
+    public function removeUninterestingEmailsFromList($emails) {
         $selectAll = $this->selectAll();
         $uninterestingEmailsArray = array();
-        foreach ($selectAll  as $dto) {
+        foreach ($selectAll as $dto) {
             $uninterestingEmailsArray [] = trim($dto->getEmail());
         }
         return array_diff($emails, $uninterestingEmailsArray);
-        
     }
 
 }

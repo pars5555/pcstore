@@ -51,7 +51,7 @@ class ServiceUploadPriceLoad extends ServiceCompanyLoad {
         $companyPrices = $serviceCompaniesPriceListManager->getCompanyHistoryPricesOrderByDate($selectedCompanyId, 0, 50);
         $this->addParam("company_prices", $companyPrices);
         $this->addParam("selectedCompanyId", $selectedCompanyId);
-        if ($_REQUEST['show_send_email_to_dealers'] && $_REQUEST['show_send_email_to_dealers'] == 1) {
+        if (isset($_REQUEST['show_send_email_to_dealers']) && $_REQUEST['show_send_email_to_dealers'] == 1) {
             $this->addParam("show_send_email_to_dealers", 1);
         }
         $emailServersManager = EmailServersManager::getInstance($this->config, $this->args);

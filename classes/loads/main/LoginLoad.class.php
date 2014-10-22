@@ -10,30 +10,30 @@ require_once (CLASSES_PATH . "/managers/UserManager.class.php");
  */
 class LoginLoad extends GuestLoad {
 
-	public function load() {
-		
-	}
+    public function load() {
+        
+    }
 
-	public function getDefaultLoads($args) {
-		$loads = array();
-		return $loads;
-	}
+    public function getDefaultLoads($args) {
+        $loads = array();
+        return $loads;
+    }
 
-	public function isValidLoad($namespace, $load) {
-		return true;
-	}
+    public function isValidLoad($namespace, $load) {
+        return true;
+    }
 
-	public function getTemplate() {
-		return TEMPLATES_DIR . "/main/login_div.tpl";
-	}
+    public function getTemplate() {
+        return TEMPLATES_DIR . "/main/login_div.tpl";
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$guestRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$guestRequest;
+    }
 
-	protected function logRequest() {
-		return false;
-	}
+    protected function logRequest() {
+        return false;
+    }
 
 }
 

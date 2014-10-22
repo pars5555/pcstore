@@ -54,8 +54,6 @@ class HomeLoad extends CmsLoad {
         return array($guestVisitors, $userVisitors, $companyVisitors, $serviceCompanyVisitors, $adminVisitors);
     }
 
-  
-
     public function getTemplate() {
         return TEMPLATES_DIR . "/cms/home.tpl";
     }

@@ -35,9 +35,9 @@ class GetImageAction extends GuestAction {
             exit;
         } else if ($this->args[0] == "item_800_800") {
             $cover = IMAGE_ROOT_DIR . "/items/" . $this->args[1] . '_' . $this->args[2] . "_800_800" . ".jpg";
-             if (!file_exists($cover)) {
-                 $cover = IMAGE_ROOT_DIR . "/items/" . $this->args[1] . '_' . $this->args[2] . "_400_400" . ".jpg";
-             }
+            if (!file_exists($cover)) {
+                $cover = IMAGE_ROOT_DIR . "/items/" . $this->args[1] . '_' . $this->args[2] . "_400_400" . ".jpg";
+            }
             $this->showImage($cover, true);
             exit;
         }

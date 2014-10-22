@@ -11,7 +11,7 @@ class ServiceCompanyExtendedProfileDto extends AbstractDto {
 
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id",
-        "service_company_id" => "serviceCompanyId", 
+        "service_company_id" => "serviceCompanyId",
         "dealer_emails" => "dealerEmails",
         "unsubscribed_emails" => "unsubscribedEmails",
         "from_email" => "fromEmail",

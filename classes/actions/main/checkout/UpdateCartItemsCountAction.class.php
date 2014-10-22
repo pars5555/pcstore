@@ -8,20 +8,20 @@ require_once (CLASSES_PATH . "/managers/CustomerCartManager.class.php");
  */
 class UpdateCartItemsCountAction extends GuestAction {
 
-	public function service() {
+    public function service() {
 
-		$customer = $this->getCustomer();
-		$customerEmail = strtolower($customer->getEmail());
-		$customerCartManager = CustomerCartManager::getInstance($this->config, $this->args);
-		$totalCount = $customerCartManager->getCustomerCartTotalCount($customerEmail);
-		$jsonArr = array('status' => "ok", "cart_items_count" => $totalCount);
-		echo json_encode($jsonArr);
-		return true;
-	}
+        $customer = $this->getCustomer();
+        $customerEmail = strtolower($customer->getEmail());
+        $customerCartManager = CustomerCartManager::getInstance($this->config, $this->args);
+        $totalCount = $customerCartManager->getCustomerCartTotalCount($customerEmail);
+        $jsonArr = array('status' => "ok", "cart_items_count" => $totalCount);
+        echo json_encode($jsonArr);
+        return true;
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$userCompanyRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$userCompanyRequest;
+    }
 
 }
 

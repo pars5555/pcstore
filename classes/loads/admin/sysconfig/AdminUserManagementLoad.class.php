@@ -36,7 +36,7 @@ class AdminUserManagementLoad extends AdminLoad {
         $ret = array();
         foreach ($allCompanyDealers as $companyDealerDto) {
             $userId = $companyDealerDto->getUserId();
-            $companyName= $companyDealerDto->getCompanyName();
+            $companyName = $companyDealerDto->getCompanyName();
             $ret[$userId][] = $companyName;
         }
         return $ret;

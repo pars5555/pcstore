@@ -9,23 +9,23 @@ require_once (CLASSES_PATH . "/dal/dto/AbstractDto.class.php");
  */
 class AdminDto extends AbstractDto {
 
-	// Map of DB value to Field value
-	protected $mapArray = array("id" => "id", "title" => "title", "email" => "email", "password" => "password", "hash" => "hash", "type" => "type",
-		"last_ping" => "lastPing", "number_to_receive_sms_on_price_upload" => "numberToReceiveSmsOnPriceUpload", "sound_on" => "soundOn", "price_group" => "priceGroup");
+    // Map of DB value to Field value
+    protected $mapArray = array("id" => "id", "title" => "title", "email" => "email", "password" => "password", "hash" => "hash", "type" => "type",
+        "last_ping" => "lastPing", "number_to_receive_sms_on_price_upload" => "numberToReceiveSmsOnPriceUpload", "sound_on" => "soundOn", "price_group" => "priceGroup");
 
-	// constructs class instance
-	public function __construct() {
-		
-	}
+    // constructs class instance
+    public function __construct() {
+        
+    }
 
-	// returns map array
-	public function getMapArray() {
-		return $this->mapArray;
-	}
+    // returns map array
+    public function getMapArray() {
+        return $this->mapArray;
+    }
 
-	public function getCustomerContactNameForEmail() {
-		return $this->getTitle();
-	}
+    public function getCustomerContactNameForEmail() {
+        return $this->getTitle();
+    }
 
 }
 

@@ -1,7 +1,9 @@
 <?php
+
 require_once (CLASSES_PATH . "/managers/AbstractManager.class.php");
 
-class PaypalManager extends AbstractManager{
+class PaypalManager extends AbstractManager {
+
     private $PROXY_HOST = '127.0.0.1';
     private $PROXY_PORT = '808';
     private $SandboxFlag = true;
@@ -12,10 +14,10 @@ class PaypalManager extends AbstractManager{
     private $USE_PROXY;
     private $version;
 
-   /**
-	 * @var singleton instance of class
-	 */
-	private static $instance = null;
+    /**
+     * @var singleton instance of class
+     */
+    private static $instance = null;
 
     /**
      * Returns an singleton instance of this class
@@ -36,7 +38,7 @@ class PaypalManager extends AbstractManager{
     public function getMapper() {
         return null;
     }
-    
+
     /* 	
       ' Define the PayPal Redirect URLs.
       ' 	This is the URL that the buyer is first sent to do authorize payment with their paypal account
@@ -46,7 +48,7 @@ class PaypalManager extends AbstractManager{
       ' For the live site, the URL is        https://www.paypal.com/webscr&cmd=_express-checkout&token=
      */
 
-    function __construct() {       
+    function __construct() {
         $this->SandboxFlag = $this->getCmsVar('paypal_sandbox_on') == 1;
         $this->API_UserName = $this->getCmsVar('paypal_api_username');
         $this->API_Password = $this->getCmsVar('paypal_api_password');
@@ -90,25 +92,25 @@ class PaypalManager extends AbstractManager{
 //------------------------------------------------------------------------------------------------------------------------------------
 // Construct the parameter string that describes the SetExpressCheckout API call in the shortcut implementation
 
-        $nvpstr = "&PAYMENTREQUEST_0_AMT=" . ($paymentAmount+$shippingAmt);
+        $nvpstr = "&PAYMENTREQUEST_0_AMT=" . ($paymentAmount + $shippingAmt);
         $nvpstr = $nvpstr . "&PAYMENTREQUEST_0_PAYMENTACTION=" . $paymentType;
         $nvpstr = $nvpstr . "&RETURNURL=" . $returnURL;
         $nvpstr = $nvpstr . "&CANCELURL=" . $cancelURL;
         $nvpstr = $nvpstr . "&PAYMENTREQUEST_0_CURRENCYCODE=" . $currencyCodeType;
-        $nvpstr .= "&PAYMENTREQUEST_0_SHIPPINGAMT=".$shippingAmt;
-        $nvpstr .= "&PAYMENTREQUEST_0_ITEMAMT=".$paymentAmount;
+        $nvpstr .= "&PAYMENTREQUEST_0_SHIPPINGAMT=" . $shippingAmt;
+        $nvpstr .= "&PAYMENTREQUEST_0_ITEMAMT=" . $paymentAmount;
 
         $_SESSION["currencyCodeType"] = $currencyCodeType;
         $_SESSION["PaymentType"] = $paymentType;
 
-         foreach ($items as $index => $item) {           
+        foreach ($items as $index => $item) {
             $nvpstr .= "&L_PAYMENTREQUEST_0_ITEMCATEGORY" . $index . "=Physical";
             $nvpstr .= "&L_PAYMENTREQUEST_0_NAME" . $index . "=" . urlencode($item["name"]);
             $nvpstr .= "&L_PAYMENTREQUEST_0_AMT" . $index . "=" . urlencode($item["amt"]);
             $nvpstr .= "&L_PAYMENTREQUEST_0_QTY" . $index . "=" . urlencode($item["qty"]);
         }
-        
-        
+
+
 //'--------------------------------------------------------------------------------------------------------------- 
 //' Make the API call to PayPal
 //' If the API call succeded, then redirect the buyer to PayPal to begin to authorize payment.  
@@ -144,8 +146,7 @@ class PaypalManager extends AbstractManager{
       '--------------------------------------------------------------------------------------------------------------------------------------------
      */
 
-    function CallMarkExpressCheckout($paymentAmount, $currencyCodeType, $paymentType, $returnURL, 
-            $cancelURL, $shipToName, $shipToStreet, $shipToCity, $shipToState, $shipToCountryCode, $shipToZip, $shipToStreet2, $phoneNum) {
+    function CallMarkExpressCheckout($paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL, $shipToName, $shipToStreet, $shipToCity, $shipToState, $shipToCountryCode, $shipToZip, $shipToStreet2, $phoneNum) {
         $nvpstr = "&PAYMENTREQUEST_0_AMT=" . $paymentAmount;
         $nvpstr = $nvpstr . "&PAYMENTREQUEST_0_PAYMENTACTION=" . $paymentType;
         $nvpstr = $nvpstr . "&RETURNURL=" . $returnURL;
@@ -162,7 +163,7 @@ class PaypalManager extends AbstractManager{
         $nvpstr = $nvpstr . "&PAYMENTREQUEST_0_SHIPTOPHONENUM=" . $phoneNum;
         $_SESSION["currencyCodeType"] = $currencyCodeType;
         $_SESSION["PaymentType"] = $paymentType;
-        
+
         $resArray = $this->hash_call("SetExpressCheckout", $nvpstr);
         $ack = strtoupper($resArray["ACK"]);
         if ($ack == "SUCCESS" || $ack == "SUCCESSWITHWARNING") {
@@ -224,7 +225,7 @@ class PaypalManager extends AbstractManager{
      */
 
     function ConfirmPayment($FinalPaymentAmt) {
-       
+
         $token = urlencode($_SESSION['TOKEN']);
         $paymentType = urlencode($_SESSION['PaymentType']);
         $currencyCodeType = urlencode($_SESSION['currencyCodeType']);

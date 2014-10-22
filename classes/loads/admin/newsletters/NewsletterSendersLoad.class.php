@@ -15,7 +15,7 @@ class NewsletterSendersLoad extends AdminLoad {
 
         $newslettersManager = NewslettersManager::getInstance($this->config, $this->args);
         $selected_email_accounts_ids = $_REQUEST['selected_email_accounts_ids'];
-        
+
         $emailAccountsManager = EmailAccountsManager::getInstance($this->config, $this->args);
         $allEmailAccounts = $emailAccountsManager->selectAll();
         $emailAccountsNameIdMap = array();
@@ -24,8 +24,8 @@ class NewsletterSendersLoad extends AdminLoad {
         }
         $this->addParam('email_accounts_logins', $emailAccountsNameIdMap);
         $this->addParam('selected_email_accounts_ids', explode(',', $selected_email_accounts_ids));
-        
-        
+
+
         $include_all_active_users = $_REQUEST['include_all_active_users'];
         $this->addParam('include_all_active_users', $include_all_active_users);
     }

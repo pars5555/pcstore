@@ -120,7 +120,7 @@ class ServiceCompanyDealersMapper extends AbstractMapper {
 
     public function getUserCompaniesIds($userId) {
         $sqlQuery = sprintf(self::$GET_USER_COMPANIES_IDS, $this->getTableName(), $userId);
-        $result = $this->fetchField($sqlQuery, companies_ids);
+        $result = $this->fetchField($sqlQuery, 'companies_ids');
         return $result;
     }
 

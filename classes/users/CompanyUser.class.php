@@ -21,7 +21,7 @@ class CompanyUser extends AuthenticateUser {
 	public function __construct($id) {
 		parent::__construct($id);
 		$this->setCookieParam("ut", UserGroups::$COMPANY);
-		$this->companyManager = CompanyManager::getInstance($this->config, $this->args);
+		$this->companyManager = CompanyManager::getInstance(null, null);
 	}
 
 	public function setUniqueId($uniqueId, $updateDb = true) {

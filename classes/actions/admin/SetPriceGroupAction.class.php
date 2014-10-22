@@ -8,12 +8,12 @@ require_once (CLASSES_PATH . "/managers/AdminManager.class.php");
  */
 class SetPriceGroupAction extends AdminAction {
 
-	public function service() {
-		$adminManager = AdminManager::getInstance($this->config, $this->args);
-		$price_group = $_REQUEST['price_group'];
-		$adminManager->setPriceGroup($this->getUserId(), $price_group);
-		$this->ok();
-	}
+    public function service() {
+        $adminManager = AdminManager::getInstance($this->config, $this->args);
+        $price_group = $_REQUEST['price_group'];
+        $adminManager->setPriceGroup($this->getUserId(), $price_group);
+        $this->ok();
+    }
 
 }
 

@@ -9,18 +9,18 @@ require_once (CLASSES_PATH . "/dal/dto/AbstractDto.class.php");
  */
 class CreditOrdersDto extends AbstractDto {
 
-	// Map of DB value to Field value
-	protected $mapArray = array("id" => "id", "order_id" => "orderId", "deposit" => "deposit", "credit_supplier_id" => "creditSupplierId", "credit_months" => "creditMonths", "annual_interest_percent" => "annualInterestPercent", "monthly_payment" => "monthlyPayment");
+    // Map of DB value to Field value
+    protected $mapArray = array("id" => "id", "order_id" => "orderId", "deposit" => "deposit", "credit_supplier_id" => "creditSupplierId", "credit_months" => "creditMonths", "annual_interest_percent" => "annualInterestPercent", "monthly_payment" => "monthlyPayment");
 
-	// constructs class instance
-	public function __construct() {
-		
-	}
+    // constructs class instance
+    public function __construct() {
+        
+    }
 
-	// returns map array
-	public function getMapArray() {
-		return $this->mapArray;
-	}
+    // returns map array
+    public function getMapArray() {
+        return $this->mapArray;
+    }
 
 }
 

@@ -10,7 +10,7 @@ require_once (CLASSES_PATH . "/loads/cms/CmsLoad.class.php");
 class CompaniesLoad extends CmsLoad {
 
     public function load() {
-       
+        
     }
 
     public function getTemplate() {

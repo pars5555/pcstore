@@ -50,7 +50,7 @@ class HomePageLoad extends GuestLoad {
             $loads["login"]["loads"] = array();
 
             //show registration dialog if page requested			
-            if ($_REQUEST["p"] == 'registration' || isset($_GET["invc"])) {
+            if ((isset($_REQUEST["p"]) && $_REQUEST["p"] == 'registration') || isset($_GET["invc"])) {
                 $this->addParam('show_registration_dialog', 1);
                 $loadName = "UserRegistrationLoad";
                 $loads["user_registration"]["load"] = "loads/main/" . $loadName;
@@ -63,6 +63,10 @@ class HomePageLoad extends GuestLoad {
     }
 
     public function manageFooterLinksExternalReload() {
+        if (!isset($_REQUEST["p"]))
+        {
+            return null;
+        }
         switch ($_REQUEST["p"]) {
             case 'help' :
             case 'register' :
@@ -167,7 +171,7 @@ class HomePageLoad extends GuestLoad {
         }
         $tabTitles['pc_configurator'] = $lm->getPhraseSpan(226);
         $this->activeLoadPath = 'main/';
-        $activeTab = $this->getActiveTab($_REQUEST["p"]);
+        $activeTab = $this->getActiveTab(isset($_REQUEST["p"])?$_REQUEST["p"]:null);
         if ($activeTab != null) {
             $this->activeLoadName = $activeTab[0];
             $this->activeLoadPath = $activeTab[1];

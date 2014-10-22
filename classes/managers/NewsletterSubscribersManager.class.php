@@ -60,16 +60,16 @@ class NewsletterSubscribersManager extends AbstractManager {
         $this->deleteByField('email', trim($email));
     }
 
-    public function addSubscriber($email) {        
+    public function addSubscriber($email) {
         $dto = $this->mapper->createDto();
         $dto->setEmail($email);
         return $this->mapper->insertDto($dto);
     }
-    
-    public function getAllSubscribers() {        
+
+    public function getAllSubscribers() {
         $dtos = $this->selectAll();
         $ret = array();
-        foreach ($dtos  as $dto) {
+        foreach ($dtos as $dto) {
             $ret[] = $dto->getEmail();
         }
         return $ret;

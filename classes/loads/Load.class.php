@@ -12,16 +12,16 @@ require_once(CLASSES_PATH . "/users/UserGroups.class.php");
 
 abstract class Load extends AbstractLoad {
 
-	//! A constructor.
-	public function __construct() {
-		
-	}
+    //! A constructor.
+    public function __construct() {
+        
+    }
 
 //	
 //--responsible for reloading	
-	protected function isMain() {
-		return false;
-	}
+    protected function isMain() {
+        return false;
+    }
 
 }
 

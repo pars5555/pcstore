@@ -132,8 +132,7 @@ class CompanyExtendedProfileManager extends AbstractManager {
 
     public function addUnsubscribeEmailForCompany($companyId, $md_email) {
         $dto = $this->selectByField('company_id', $companyId);
-        if (empty($dto))
-        {
+        if (empty($dto)) {
             return false;
         }
         $dto = $dto[0];

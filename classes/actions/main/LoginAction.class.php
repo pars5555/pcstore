@@ -6,7 +6,6 @@ require_once (CLASSES_PATH . "/managers/CompanyManager.class.php");
 require_once (CLASSES_PATH . "/managers/OnlineUsersManager.class.php");
 require_once (CLASSES_PATH . "/actions/main/UploadCompanyPriceAction.class.php");
 
-
 /**
  * @author Vahagn Sookiasian
  */

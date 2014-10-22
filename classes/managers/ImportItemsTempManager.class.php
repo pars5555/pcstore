@@ -228,7 +228,7 @@ class ImportItemsTempManager extends AbstractManager {
                 $subCategoriesIdsArray = array();
                 if (!empty($subCategoriesIds)) {
                     $subCategoriesIdsArray = explode(',', $subCategoriesIds);
-                }               
+                }
                 $catIds = array_merge(array($rootCategoryId), $subCategoriesIdsArray);
                 $itemId = $itemManager->addItem($this->secure($priceRow->getDisplayName()), $priceRow->getShortSpec(), $priceRow->getFullSpec(), $priceRow->getWarrantyMonths(), $priceRow->getDealerPrice(), $priceRow->getVatPrice(), $priceRow->getDealerPriceAmd(), $priceRow->getVatPriceAmd(), $company_id, $priceRow->getModel(), $priceRow->getBrand(), $catIds, date('Y-m-d'), $priceOrderIndex, $login);
                 $newItemsCount++;

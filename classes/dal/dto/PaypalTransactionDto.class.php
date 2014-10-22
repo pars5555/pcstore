@@ -22,7 +22,6 @@ class PaypalTransactionDto extends AbstractDto {
         return $this->mapArray;
     }
 
-
 }
 
 ?>

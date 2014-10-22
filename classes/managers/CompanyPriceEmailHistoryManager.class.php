@@ -57,12 +57,10 @@ class CompanyPriceEmailHistoryManager extends AbstractManager {
     }
 
     public function addRow($companyId, $companyType, $fromEmail, $toEmails, $body, $subject, $attachments) {
-        if (is_array($toEmails))
-        {
+        if (is_array($toEmails)) {
             $toEmails = implode(',', $toEmails);
         }
-        if (is_array($attachments))
-        {
+        if (is_array($attachments)) {
             $attachments = implode(',', $attachments);
         }
         $dto = $this->createDto();
@@ -77,7 +75,7 @@ class CompanyPriceEmailHistoryManager extends AbstractManager {
         return $this->insertDto($dto);
     }
 
-    public function getCompanySentEmailsByHours($companyId,$companyType, $hours) {
+    public function getCompanySentEmailsByHours($companyId, $companyType, $hours) {
         return $this->mapper->getCompanySentEmailsByHours($companyId, $companyType, $hours);
     }
 

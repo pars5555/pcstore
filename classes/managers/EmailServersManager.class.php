@@ -12,57 +12,57 @@ require_once (CLASSES_PATH . "/dal/mappers/EmailServersMapper.class.php");
  */
 class EmailServersManager extends AbstractManager {
 
-	/**
-	 * @var app config
-	 */
-	private $config;
+    /**
+     * @var app config
+     */
+    private $config;
 
-	/**
-	 * @var passed arguemnts
-	 */
-	private $args;
+    /**
+     * @var passed arguemnts
+     */
+    private $args;
 
-	/**
-	 * @var singleton instance of class
-	 */
-	private static $instance = null;
+    /**
+     * @var singleton instance of class
+     */
+    private static $instance = null;
 
-	/**
-	 * Initializes DB mappers
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	function __construct($config, $args) {
-		$this->mapper = EmailServersMapper::getInstance();
-		$this->config = $config;
-		$this->args = $args;
-	}
+    /**
+     * Initializes DB mappers
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    function __construct($config, $args) {
+        $this->mapper = EmailServersMapper::getInstance();
+        $this->config = $config;
+        $this->args = $args;
+    }
 
-	/**
-	 * Returns an singleton instance of this class
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	public static function getInstance($config, $args) {
+    /**
+     * Returns an singleton instance of this class
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    public static function getInstance($config, $args) {
 
-		if (self::$instance == null) {
+        if (self::$instance == null) {
 
-			self::$instance = new EmailServersManager($config, $args);
-		}
-		return self::$instance;
-	}
-	
-	public function getByName($name) {
-		$dtos = $this->selectByField('name', $name);
-		if (count($dtos) === 1) {
-			return $dtos[0];
-		}
-		return null;
-	}
+            self::$instance = new EmailServersManager($config, $args);
+        }
+        return self::$instance;
+    }
+
+    public function getByName($name) {
+        $dtos = $this->selectByField('name', $name);
+        if (count($dtos) === 1) {
+            return $dtos[0];
+        }
+        return null;
+    }
 
 }
 

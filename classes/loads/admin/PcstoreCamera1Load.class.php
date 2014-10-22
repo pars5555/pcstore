@@ -11,13 +11,13 @@ require_once (CLASSES_PATH . "/util/ImageDiff.class.php");
  */
 class PcstoreCamera1Load extends AdminLoad {
 
-    public function load() {        
-      /*  $i1 = DATA_DIR . '/images/1.jpg';
-        $i2 = DATA_DIR . '/images/2.jpg';
-        $t = microtime(true);        
-        $ret = ImageDiff::diffImages($i1, $i2);
-        
-        var_dump($ret, microtime(true)-$t);exit;*/
+    public function load() {
+        /*  $i1 = DATA_DIR . '/images/1.jpg';
+          $i2 = DATA_DIR . '/images/2.jpg';
+          $t = microtime(true);
+          $ret = ImageDiff::diffImages($i1, $i2);
+
+          var_dump($ret, microtime(true)-$t);exit; */
     }
 
     public function getTemplate() {

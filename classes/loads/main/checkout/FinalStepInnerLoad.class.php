@@ -44,12 +44,12 @@ class FinalStepInnerLoad extends GuestLoad {
 
         //all cart items, bundle items grouped in sub array
         $cartTotalDealsDiscountAMD = 0;
-        if ($_REQUEST['cho_payment_type'] != 'cash') {
+        if (!isset($_REQUEST['cho_payment_type']) || $_REQUEST['cho_payment_type'] != 'cash') {
             $_REQUEST['cho_promo_codes'] = '';
         }
-        
-        $cho_include_vat = $this->secure($_REQUEST['cho_include_vat']);
-        if (!empty($_REQUEST['cho_promo_codes'])) {
+
+        $cho_include_vat = isset($_REQUEST['cho_include_vat']) ? $this->secure($_REQUEST['cho_include_vat']) : null;
+        if (isset($_REQUEST['cho_promo_codes']) && !empty($_REQUEST['cho_promo_codes'])) {
 
             $cho_promo_codes = $this->secure($_REQUEST['cho_promo_codes']);
 
@@ -95,7 +95,7 @@ class FinalStepInnerLoad extends GuestLoad {
         }
 
         $shippingCost = 0;
-        if ($_REQUEST['cho_do_shipping'] == 1) {
+        if (isset($_REQUEST['cho_do_shipping']) && $_REQUEST['cho_do_shipping'] == 1) {
             $specialFeesManager = SpecialFeesManager::getInstance($this->config, $this->args);
             if ($grandTotalAMD < intval($this->getCmsVar('shipping_in_yerevan_free_amd_over'))) {
                 $region = $this->secure($_REQUEST['cho_shipping_region']);
@@ -121,11 +121,11 @@ class FinalStepInnerLoad extends GuestLoad {
                 $this->addParam('usablePoints', $usablePoints);
             }
         }
-        if ($_REQUEST['cho_payment_type'] == 'credit') {
+        if (isset($_REQUEST['cho_payment_type']) && $_REQUEST['cho_payment_type'] == 'credit') {
             $_REQUEST['cho_apply_user_points'] = 0;
         }
 
-        if ($_REQUEST['cho_apply_user_points'] == 1) {
+        if (isset($_REQUEST['cho_apply_user_points']) && $_REQUEST['cho_apply_user_points'] == 1) {
             $grandTotalAMDWithShipping -= $usablePoints;
         }
 
@@ -133,7 +133,7 @@ class FinalStepInnerLoad extends GuestLoad {
 
         $this->addParam('final_step', 'true');
 
-        if ($_REQUEST['cho_payment_type'] == 'credit') {
+        if (isset($_REQUEST['cho_payment_type']) && $_REQUEST['cho_payment_type'] == 'credit') {
             $cho_credit_supplier_id = $this->secure($_REQUEST['cho_credit_supplier_id']);
 
             $cho_selected_deposit_amount = $this->secure($_REQUEST['cho_selected_deposit_amount']);
@@ -165,13 +165,12 @@ class FinalStepInnerLoad extends GuestLoad {
         $index = array_search($paymentType, $payment_option_values);
         $paymentTypeDisplayNameId = $payment_options_display_names_ids[$index];
         $this->addParam('paymentTypeDisplayNameId', $paymentTypeDisplayNameId);
-        
-         $this->addParam('maxItemCartCount', intval($this->getCmsVar('max_item_cart_count')));
-         
-         $userManager = UserManager::getInstance($this->config, $this->args);
-         $vipCustomer = $userManager->isVipAndVipEnabled($customer);
-         $this->addParam('vip_enabled', $vipCustomer?1:0);
-         
+
+        $this->addParam('maxItemCartCount', intval($this->getCmsVar('max_item_cart_count')));
+
+        $userManager = UserManager::getInstance($this->config, $this->args);
+        $vipCustomer = $userManager->isVipAndVipEnabled($customer);
+        $this->addParam('vip_enabled', $vipCustomer ? 1 : 0);
     }
 
     public function getDefaultLoads($args) {

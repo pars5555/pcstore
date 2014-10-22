@@ -141,7 +141,7 @@ class CompaniesListLoad extends GuestLoad {
     public function groupCompaniesZippedPricesByCompanyId($companiesZippedPricesByDaysNumber) {
         $ret = array();
         foreach ($companiesZippedPricesByDaysNumber as $dto) {
-            if (count($ret[$dto->getCompanyId()]) <= intval($this->getCmsVar('company_list_zip_price_first_load_limit'))) {
+            if (!isset($ret[$dto->getCompanyId()]) || count($ret[$dto->getCompanyId()]) <= intval($this->getCmsVar('company_list_zip_price_first_load_limit'))) {
                 $ret[$dto->getCompanyId()][] = $dto;
             }
         }
@@ -151,7 +151,7 @@ class CompaniesListLoad extends GuestLoad {
     public function groupServiceCompaniesZippedPricesByCompanyId($companiesZippedPricesByDaysNumber) {
         $ret = array();
         foreach ($companiesZippedPricesByDaysNumber as $dto) {
-            if (count($ret[$dto->getServiceCompanyId()]) <= intval($this->getCmsVar('company_list_zip_price_first_load_limit'))) {
+            if (!isset($ret[$dto->getServiceCompanyId()]) ||  count($ret[$dto->getServiceCompanyId()]) <= intval($this->getCmsVar('company_list_zip_price_first_load_limit'))) {
                 $ret[$dto->getServiceCompanyId()][] = $dto;
             }
         }

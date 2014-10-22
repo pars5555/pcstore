@@ -25,7 +25,7 @@ class UsersLoad extends CmsLoad {
         $userServiceCompanies = $this->getUserCompaniesArray($allServiceCompanyDealers);
         $this->addParam('userCompanies', $userCompanies);
         $this->addParam('userServiceCompanies', $userServiceCompanies);
-        $this->addParam('visible_fields_names', array('id', 'email','name', 'lastName', 'phones', 'password', 'registeredDate','lastSmsValidationCode', 'vip'));
+        $this->addParam('visible_fields_names', array('id', 'email', 'name', 'lastName', 'phones', 'password', 'registeredDate', 'lastSmsValidationCode', 'vip'));
     }
 
     private function getUserCompaniesArray($allCompanyDealers) {

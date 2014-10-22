@@ -13,10 +13,10 @@ class CompaniesManagementLoad extends AdminLoad {
         }
         if ($loadPage == 1) {
             $this->addParam("page_loaded", 1);
-            
+
             $companyManager = CompanyManager::getInstance($this->config, $this->args);
             $allCompanyDtos = $companyManager->getAllCompanies(true, true);
-                   $this->addParam("companies", $allCompanyDtos )   ;
+            $this->addParam("companies", $allCompanyDtos);
         } else {
             $this->addParam("page_loaded", 0);
         }

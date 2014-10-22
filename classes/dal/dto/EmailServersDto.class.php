@@ -11,7 +11,7 @@ class EmailServersDto extends AbstractDto {
 
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id", "name" => "name", "smtp_host" => "smtpHost", "smtp_port" => "smtpPort",
-	"day_max_sending_limit" => "dayMaxSendingLimit",	
+        "day_max_sending_limit" => "dayMaxSendingLimit",
         "smtp_auth" => "smtpAuth", "email_default_postfix" => "emailDefaultPostfix", "image_file_name" => "imageFileName",
         "display_name" => "displayName");
 

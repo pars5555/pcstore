@@ -39,4 +39,5 @@ class AddServiceCompanyAction extends GuestAction {
     }
 
 }
+
 ?>

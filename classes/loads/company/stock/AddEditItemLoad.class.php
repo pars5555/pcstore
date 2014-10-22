@@ -36,7 +36,7 @@ class AddEditItemLoad extends CompanyLoad {
         $item_warranty_options = explode(',', $this->getCmsVar('item_warranty_options'));
         $this->addParam('item_warranty_options', $item_warranty_options);
         $itemManager = ItemManager::getInstance($this->config, $this->args);
-        if ($_REQUEST['item_id']) {
+        if (isset($_REQUEST['item_id'])) {
             $itemId = $this->secure($_REQUEST['item_id']);
             $itemDto = $itemManager->selectByPK($itemId);
             $this->addParam('item_pictures_count', $itemDto->getPicturesCount());

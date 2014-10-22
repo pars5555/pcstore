@@ -14,7 +14,7 @@ class ItemPicturesLoad extends CompanyLoad {
         $item_id = intval($_REQUEST['item_id']);
         $itemManager = ItemManager::getInstance($this->config, $this->args);
         $itemDto = $itemManager->selectByPK($item_id);
-        $this->addParam('itemDto', $itemDto);       
+        $this->addParam('itemDto', $itemDto);
     }
 
     public function getTemplate() {

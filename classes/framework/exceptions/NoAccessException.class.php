@@ -11,16 +11,16 @@
  */
 class NoAccessException extends Exception {
 
-	/**
-	 * Return a thingie based on $paramie
-	 * @abstract  
-	 * @access
-	 * @param boolean $paramie 
-	 * @return integer|babyclass
-	 */
-	public function __construct($message) {
-		parent::__construct($message, 0);
-	}
+    /**
+     * Return a thingie based on $paramie
+     * @abstract  
+     * @access
+     * @param boolean $paramie 
+     * @return integer|babyclass
+     */
+    public function __construct($message) {
+        parent::__construct($message, 0);
+    }
 
 }
 

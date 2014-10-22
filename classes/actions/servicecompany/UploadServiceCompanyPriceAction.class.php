@@ -84,7 +84,7 @@ class UploadServiceCompanyPriceAction extends ServiceCompanyAction {
             $companyLastPriceMinutes = $serviceCompaniesPriceListManager->getCompanyLastPriceMinutes($serviceCompanyId);
             if ($companyLastPriceMinutes / 60 < $company_duplicated_price_upload_hours && $duplicatedUpload) {
                 $jsonArr = array('status' => "err", "errText" => "Same Price already exists! please try in " . $company_duplicated_price_upload_hours . " hours.");
-                 echo "<script>var l= new parent.ngs.UploadServiceCompanyPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
+                echo "<script>var l= new parent.ngs.UploadServiceCompanyPriceAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
                 return false;
             }
             $companyLastPriceDtos = $serviceCompaniesPriceListManager->getCompanyLastPrices($serviceCompanyId);
@@ -123,8 +123,8 @@ class UploadServiceCompanyPriceAction extends ServiceCompanyAction {
             foreach ($companyLastPriceDtos as $key => $companyLastPriceDto) {
                 $lastPriceName = $companyLastPriceDto->getFileName();
                 $lastPriceExt = $companyLastPriceDto->getFileExt();
-                $lastPriceFiles [] = array($dir . $lastPriceName . '.' . $lastPriceExt, $lastPriceName . '.'.$lastPriceExt);
-            }            
+                $lastPriceFiles [] = array($dir . $lastPriceName . '.' . $lastPriceExt, $lastPriceName . '.' . $lastPriceExt);
+            }
             $this->createZip($lastPriceFiles, $dir . $lastPriceFileName . '.zip');
             $lastPriceUploadedDateTime = $companyLastPriceFirstUploadedDto->getUploadDateTime();
             $lastPriceUploaderType = $companyLastPriceFirstUploadedDto->getUploaderType();

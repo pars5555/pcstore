@@ -121,7 +121,12 @@ ngs.PcConfiguratorManager = {
         if (jQuery('#pcc_print_button').length > 0) {
             jQuery('#pcc_print_button').css({'visibility': 'visible'});
         }
-        ngs.UrlChangeEventObserver.setFakeURL('?' + jQuery.param(params));
+        var urlParams = jQuery.param(params);
+        if (urlParams.trim() != '')
+        {
+            urlParams = '?' + urlParams;
+        }
+        ngs.UrlChangeEventObserver.setFakeURL(urlParams);
         ngs.load('pcc_total_calculations', p);
 
         var thisInstance = this;
@@ -231,22 +236,63 @@ ngs.PcConfiguratorManager = {
      * @param {Object} item_id last selected item id
      */
     getSelectedComponentsParam: function(componentIndex, item_id) {
-        var ret = {
-            "case": this.selectedComponentsArray[this.componentsIndex.CASE],
-            "mb": this.selectedComponentsArray[this.componentsIndex.MB],
-            "rams": this.selectedComponentsArray[this.componentsIndex.RAM],
-            "cpu": this.selectedComponentsArray[this.componentsIndex.CPU],
-            "hdds": this.selectedComponentsArray[this.componentsIndex.HDD],
-            "ssds": this.selectedComponentsArray[this.componentsIndex.SSD],
-            "cooler": this.selectedComponentsArray[this.componentsIndex.COOLER],
-            "opts": this.selectedComponentsArray[this.componentsIndex.OPT],
-            "monitor": this.selectedComponentsArray[this.componentsIndex.MONITOR],
-            "graphics": this.selectedComponentsArray[this.componentsIndex.VIDEO],
-            "power": this.selectedComponentsArray[this.componentsIndex.POWER],
-            "keyboard": this.selectedComponentsArray[this.componentsIndex.KEY],
-            "mouse": this.selectedComponentsArray[this.componentsIndex.MOUSE],
-            "speaker": this.selectedComponentsArray[this.componentsIndex.SPEAKER]
-        };
+        var ret = {};
+        if (this.selectedComponentsArray[this.componentsIndex.CASE].trim() !== '')
+        {
+            ret.case = this.selectedComponentsArray[this.componentsIndex.CASE];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.MB].trim() !== '')
+        {
+            ret.mb = this.selectedComponentsArray[this.componentsIndex.MB];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.RAM].trim() !== '')
+        {
+            ret.rams = this.selectedComponentsArray[this.componentsIndex.RAM];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.CPU].trim() !== '')
+        {
+            ret.cpu = this.selectedComponentsArray[this.componentsIndex.CPU];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.HDD].trim() !== '')
+        {
+            ret.hdds = this.selectedComponentsArray[this.componentsIndex.HDD];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.SSD].trim() !== '')
+        {
+            ret.ssds = this.selectedComponentsArray[this.componentsIndex.SSD];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.COOLER].trim() !== '')
+        {
+            ret.cooler = this.selectedComponentsArray[this.componentsIndex.COOLER];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.OPT].trim() !== '')
+        {
+            ret.opts = this.selectedComponentsArray[this.componentsIndex.OPT];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.MONITOR].trim() !== '')
+        {
+            ret.monitor = this.selectedComponentsArray[this.componentsIndex.MONITOR];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.VIDEO].trim() !== '')
+        {
+            ret.graphics = this.selectedComponentsArray[this.componentsIndex.VIDEO];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.POWER].trim() !== '')
+        {
+            ret.power = this.selectedComponentsArray[this.componentsIndex.POWER];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.KEY].trim() !== '')
+        {
+            ret.keyboard = this.selectedComponentsArray[this.componentsIndex.KEY];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.MOUSE].trim() !== '')
+        {
+            ret.mouse = this.selectedComponentsArray[this.componentsIndex.MOUSE];
+        }
+        if (this.selectedComponentsArray[this.componentsIndex.SPEAKER].trim() !== '')
+        {
+            ret.speaker = this.selectedComponentsArray[this.componentsIndex.SPEAKER];
+        }
         if (componentIndex !== null)
         {
             ret.last_selected_component_type_index = componentIndex;

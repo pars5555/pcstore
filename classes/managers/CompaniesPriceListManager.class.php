@@ -282,7 +282,7 @@ class CompaniesPriceListManager extends AbstractManager {
         return substr(str_shuffle($letters), 0, $chars);
     }
 
-    public function downloadFile($pricePath, $downloadFileName) {  
+    public function downloadFile($pricePath, $downloadFileName) {
         if (file_exists($pricePath)) {
             $ff = explode('.', $pricePath);
             end($ff);
@@ -291,9 +291,8 @@ class CompaniesPriceListManager extends AbstractManager {
             header('Content-Description: File Transfer');
             $finfo = new finfo(FILEINFO_MIME);
             $type = $finfo->file($pricePath);
-            if (strtolower($extension) === 'xlsx')
-            {
-                $type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'; 
+            if (strtolower($extension) === 'xlsx') {
+                $type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
             }
             header('Content-Type: ' . $type);
             header('Content-Transfer-Encoding: binary');
@@ -321,7 +320,7 @@ class CompaniesPriceListManager extends AbstractManager {
         $priceValuesManager = PriceValuesManager::getInstance($this->config, $this->args);
         $importPriceManager = ImportPriceManager::getInstance($this->config, $this->args);
         $priceSheetsManager = PriceSheetsManager::getInstance($this->config, $this->args);
-       
+
         $companyLastPrices = $this->getCompanyLastPrices($companyId);
         if (empty($companyLastPrices) || !array_key_exists($priceIndex, $companyLastPrices)) {
             return false;
@@ -350,7 +349,7 @@ class CompaniesPriceListManager extends AbstractManager {
         }
 
         list($sheetNames, $sheetStates) = $importPriceManager->getCompanyPriceSheetsNames($pHPExcelObject);
-        
+
         if ($priceIndex == 0) {
             $priceSheetsManager->deleteByField('company_id', $companyId);
         }

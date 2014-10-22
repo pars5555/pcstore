@@ -10,30 +10,30 @@ require_once (CLASSES_PATH . "/managers/pcc_managers/PcAutoConfiguratorManager.c
  */
 class PccAutoConfigurationByFiltersLoad extends GuestLoad {
 
-	public function load() {
-		
-	}
+    public function load() {
+        
+    }
 
-	public function getDefaultLoads($args) {
-		$loads = array();
-		return $loads;
-	}
+    public function getDefaultLoads($args) {
+        $loads = array();
+        return $loads;
+    }
 
-	public function isValidLoad($namespace, $load) {
-		return true;
-	}
+    public function isValidLoad($namespace, $load) {
+        return true;
+    }
 
-	public function getTemplate() {
-		return TEMPLATES_DIR . "/main/pc_configurator/pcc_auto_configuration_by_filters.tpl";
-	}
+    public function getTemplate() {
+        return TEMPLATES_DIR . "/main/pc_configurator/pcc_auto_configuration_by_filters.tpl";
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$guestRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$guestRequest;
+    }
 
-	protected function logRequest() {
-		return false;
-	}
+    protected function logRequest() {
+        return false;
+    }
 
 }
 

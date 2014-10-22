@@ -71,7 +71,7 @@ class AddChangeItemAction extends CompanyAction {
         $add_picture = $this->secure($_REQUEST["add_picture"]);
 
         $editedItemId = 0;
-        if ($_REQUEST["selected_item_id"]) {
+        if (isset($_REQUEST["selected_item_id"])) {
             $editedItemId = $this->secure($_REQUEST["selected_item_id"]);
         }
 
@@ -108,7 +108,7 @@ class AddChangeItemAction extends CompanyAction {
                 return false;
             }
         }
-        
+
 
 
 

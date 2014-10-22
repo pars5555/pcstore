@@ -14,10 +14,9 @@ class CompanyGroupActionsAction extends GuestAction {
         switch ($action) {
             case 'delete_attachment':
                 $fileName = $this->secure($_REQUEST['file_name']);
-                if ($userLevel == UserGroups::$COMPANY){
+                if ($userLevel == UserGroups::$COMPANY) {
                     $fileFullPath = HTDOCS_TMP_DIR_ATTACHMENTS . "/companies/" . $companyId . '/' . $fileName;
-                }else
-                {
+                } else {
                     $fileFullPath = HTDOCS_TMP_DIR_ATTACHMENTS . "/service_companies/" . $companyId . '/' . $fileName;
                 }
                 if (file_exists($fileFullPath)) {

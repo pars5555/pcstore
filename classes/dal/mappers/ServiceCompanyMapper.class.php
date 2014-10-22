@@ -98,8 +98,6 @@ class ServiceCompanyMapper extends AbstractMapper {
         return $result;
     }
 
-  
-
     public static $GET_COMPANY_AND_BRANCHES = "SELECT `%s`.*,`service_company_branches`.`id` as  `branch_id`,
 													`service_company_branches`.`street` as  `street`,
 													`service_company_branches`.`region` as  `region`,
@@ -126,9 +124,7 @@ FROM `%s` LEFT JOIN `service_company_branches` ON  `service_company_branches`.`s
         $result = $this->fetchRows($sqlQuery);
         return $result;
     }
-    
-    
-    
+
     public static $GET_ALL_COMPANIES_BY_PRICE_HOURS = "SELECT `service_companies`.*,		
 		`service_companies_price_list`.`id` as `price_id`, 
 		`service_companies_price_list`.`file_ext` as `price_ext`, 
@@ -142,11 +138,11 @@ FROM `%s` LEFT JOIN `service_company_branches` ON  `service_company_branches`.`s
                                                         LEFT JOIN `service_companies_price_list` ON `service_companies_price_list`.`file_ext` <> 'zip' AND `service_companies_price_list`.`service_company_id`= `service_companies`.`id`                                                        
                                                         GROUP BY `service_companies`.`id`";
 
-	public function getAllServiceCompaniesWithBranches() {
-		$sqlQuery = sprintf(self::$GET_ALL_COMPANIES_BY_PRICE_HOURS, $this->getTableName());		
-		$result = $this->fetchRows($sqlQuery);                
-		return $result;
-	}
+    public function getAllServiceCompaniesWithBranches() {
+        $sqlQuery = sprintf(self::$GET_ALL_COMPANIES_BY_PRICE_HOURS, $this->getTableName());
+        $result = $this->fetchRows($sqlQuery);
+        return $result;
+    }
 
 }
 

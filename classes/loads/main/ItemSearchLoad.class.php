@@ -46,7 +46,7 @@ class ItemSearchLoad extends GuestLoad {
         }
 
         $this->current_page_number = 1;
-        if ($_REQUEST["spg"]) {
+        if (isset($_REQUEST["spg"])) {
             $this->current_page_number = $_REQUEST["spg"];
         }
         $userLevel = $this->getUserLevel();
@@ -63,7 +63,7 @@ class ItemSearchLoad extends GuestLoad {
         }
 
 
-        $selected_category_property_ids = $this->secure($_REQUEST["scpids"]);
+        $selected_category_property_ids = isset($_REQUEST["scpids"]) ? $this->secure($_REQUEST["scpids"]) : '';
         $groupedProperties = null;
         if (!empty($selected_category_property_ids)) {
             $this->addParam('selected_category_property_ids', $selected_category_property_ids);
@@ -79,8 +79,8 @@ class ItemSearchLoad extends GuestLoad {
         $userId = $this->getUserId();
 
 
-        $price_range_min = $this->secure($_REQUEST["prmin"]);
-        $price_range_max = $this->secure($_REQUEST["prmax"]);
+        $price_range_min = isset($_REQUEST["prmin"]) ? $this->secure($_REQUEST["prmin"]) : '';
+        $price_range_max = isset($_REQUEST["prmax"]) ? $this->secure($_REQUEST["prmax"]) : '';
 
         $this->addParam('search_item_price_range_min_value', $price_range_min);
         $this->addParam('search_item_price_range_max_value', $price_range_max);
@@ -100,7 +100,7 @@ class ItemSearchLoad extends GuestLoad {
             $orderByFieldName = null;
         }
 
-        $search_text = $this->secure($_REQUEST["st"]);
+        $search_text = isset($_REQUEST["st"]) ? $this->secure($_REQUEST["st"]) : '';
         $this->addParam("search_text", $search_text);
 
 
@@ -114,19 +114,21 @@ class ItemSearchLoad extends GuestLoad {
             $show_only_vat_items = $this->secure($_REQUEST['shov']);
             $this->addParam('show_only_vat_items', 1);
         }
-        
-        
-        
+
+
+        $show_only_non_picture_items = null;
         if (isset($_REQUEST["show_only_non_picture_items"])) {
             $show_only_non_picture_items = intval($_REQUEST["show_only_non_picture_items"]);
             $this->addParam('show_only_non_picture_items', $show_only_non_picture_items);
         }
-        
+
+        $show_only_no_short_spec_items = null;
         if (isset($_REQUEST["show_only_no_short_spec_items"])) {
             $show_only_no_short_spec_items = intval($_REQUEST["show_only_no_short_spec_items"]);
             $this->addParam('show_only_no_short_spec_items', $show_only_no_short_spec_items);
         }
-        
+
+        $show_only_no_full_spec_items = null;
         if (isset($_REQUEST["show_only_no_full_spec_items"])) {
             $show_only_no_full_spec_items = intval($_REQUEST["show_only_no_full_spec_items"]);
             $this->addParam('show_only_no_full_spec_items', $show_only_no_full_spec_items);
@@ -134,8 +136,8 @@ class ItemSearchLoad extends GuestLoad {
 
         searchStared:
         $offset = $item_search_limit_rows * ($this->current_page_number - 1);
-        $foundItems = $itemManager->searchItemsByTitle($userId, $userLevel, $search_text, $selectedCompanyId, $price_range_min, $price_range_max, $selectedCategoryId, $groupedProperties, $show_only_vat_items, $show_only_non_picture_items, $show_only_no_short_spec_items,$show_only_no_full_spec_items, $offset, $item_search_limit_rows, $orderByFieldName);
-        $itemsDtosOnlyCategories = $itemManager->searchItemsByTitleRowsCount($userId, $search_text, $selectedCompanyId, $price_range_min, $price_range_max, $selectedCategoryId, null, $show_only_vat_items, $show_only_non_picture_items, $show_only_no_short_spec_items,$show_only_no_full_spec_items);
+        $foundItems = $itemManager->searchItemsByTitle($userId, $userLevel, $search_text, $selectedCompanyId, $price_range_min, $price_range_max, $selectedCategoryId, $groupedProperties, $show_only_vat_items, $show_only_non_picture_items, $show_only_no_short_spec_items, $show_only_no_full_spec_items, $offset, $item_search_limit_rows, $orderByFieldName);
+        $itemsDtosOnlyCategories = $itemManager->searchItemsByTitleRowsCount($userId, $search_text, $selectedCompanyId, $price_range_min, $price_range_max, $selectedCategoryId, null, $show_only_vat_items, $show_only_non_picture_items, $show_only_no_short_spec_items, $show_only_no_full_spec_items);
 
         $this->totalItemsRowsCount = 0;
         $this->categories_count_array = array();

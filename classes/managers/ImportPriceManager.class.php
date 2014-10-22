@@ -76,7 +76,7 @@ class ImportPriceManager extends AbstractManager {
      * @return boolean
      */
     public function getCompanyPriceSheetsNames($objPHPExcel) {
-        
+
         $sheetNames = $objPHPExcel->getSheetNames();
         $sheetStates = array();
         foreach ($sheetNames as $sheetIndex => $sheetName) {
@@ -101,7 +101,7 @@ class ImportPriceManager extends AbstractManager {
         $sheet = $objPHPExcel->getSheet($sheetIndex);
         $rowIterator = $sheet->getRowIterator();
         $values = array();
-        $mt  = microtime(true); 
+        $mt = microtime(true);
         while ($rowIterator->valid()) {
             $row = $rowIterator->current();
             if ($row->getRowIndex() > 3000) {
@@ -143,10 +143,10 @@ class ImportPriceManager extends AbstractManager {
         }
         return $values;
     }
-   
+
     public function loadCompanyPriceFromCache($companyId, $selectPriceIndex, $sheetIndex) {
         $priceValuesManager = PriceValuesManager::getInstance($this->config, $this->args);
-        $values = $priceValuesManager->getCompanyPriceSheetValues($companyId, $selectPriceIndex,  $sheetIndex);
+        $values = $priceValuesManager->getCompanyPriceSheetValues($companyId, $selectPriceIndex, $sheetIndex);
         if (!empty($values)) {
             $this->parsePrice($values);
         } else {

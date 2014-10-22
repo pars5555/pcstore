@@ -47,7 +47,7 @@ class YourOrdersLoad extends GuestLoad {
             $mess3 = $this->getPhrase(360);
             $this->addParam('customerMessages', array($mess1, $mess2, $mess3));
         }
-        if (isset($_SESSION['success_message'])) {            
+        if (isset($_SESSION['success_message'])) {
             $this->addParam('customerMessages', array($_SESSION['success_message']));
             unset($_SESSION['success_message']);
         }
@@ -124,6 +124,7 @@ class YourOrdersLoad extends GuestLoad {
 
     public function groupCustomerOrders($customerOrders) {
         $groupedOrders = array();
+        $oid = null;
         foreach ($customerOrders as $key => $orderDto) {
             $orderId = $orderDto->getId();
             if ($oid != $orderId) {

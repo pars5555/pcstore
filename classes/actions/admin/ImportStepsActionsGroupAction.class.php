@@ -100,7 +100,7 @@ class ImportStepsActionsGroupAction extends AdminAction {
         if (!is_dir($dir)) {
             mkdir($dir, 0777);
         }
-        $dir = HTDOCS_TMP_DIR.'/import';
+        $dir = HTDOCS_TMP_DIR . '/import';
         if (!is_dir($dir)) {
             mkdir($dir, 0777);
         }
@@ -111,7 +111,7 @@ class ImportStepsActionsGroupAction extends AdminAction {
         move_uploaded_file($tmp_name, $pictureFullName);
 
 
-        $jsonArr = array('status' => "ok", "action" => 'upload_new_item_picture','row_id'=>$row_id, 'picture_name'=>$pictureName);
+        $jsonArr = array('status' => "ok", "action" => 'upload_new_item_picture', 'row_id' => $row_id, 'picture_name' => $pictureName);
         echo "<script>var l = new parent.ngs.ImportStepsActionsGroupAction(); l.afterAction('" . json_encode($jsonArr) . "'); </script>";
         return false;
     }

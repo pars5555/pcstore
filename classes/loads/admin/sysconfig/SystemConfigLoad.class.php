@@ -46,7 +46,7 @@ class SystemConfigLoad extends AdminLoad {
         $loads["companies_management"]["load"] = "loads/admin/sysconfig/" . $companiesManagementLoadName;
         $loads["companies_management"]["args"] = array("parentLoad" => &$this);
         $loads["companies_management"]["loads"] = array();
-        
+
         $customerAlertsAfterLoginLoadName = "CustomerAlertsAfterLoginLoad";
         $loads["customer_alerts_after_login"]["load"] = "loads/admin/sysconfig/" . $customerAlertsAfterLoginLoadName;
         $loads["customer_alerts_after_login"]["args"] = array("parentLoad" => &$this);

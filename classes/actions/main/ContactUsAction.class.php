@@ -8,10 +8,10 @@ require_once (CLASSES_PATH . "/managers/EmailSenderManager.class.php");
  */
 class ContactUsAction extends GuestAction {
 
-    public function service() {        
+    public function service() {
         $emailSenderManager = new EmailSenderManager('gmail');
         $email = strtolower($this->secure($_REQUEST['email']));
-        $msg = $this->secure($_REQUEST['msg']);                
+        $msg = $this->secure($_REQUEST['msg']);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $jsonArr = array('status' => "err", "message" => $this->getPhraseSpan(471));
             echo json_encode($jsonArr);

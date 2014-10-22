@@ -10,22 +10,22 @@ require_once (CLASSES_PATH . "/managers/LanguageManager.class.php");
  */
 class PccAfterComponentChangedAction extends GuestAction {
 
-	public function service() {
-		$pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
-		$retFieldsArray = array();
-		$retFieldsArray['selected_components_ids'] = $pccm->getRequestComponentSelectedComponents();
-		$retFieldsArray['required_components_ids'] = $pccm->getRequestComponentRequiredComponents($this->sessionManager->getUser());
-		echo json_encode($retFieldsArray);
-		return true;
-	}
+    public function service() {
+        $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
+        $retFieldsArray = array();
+        $retFieldsArray['selected_components_ids'] = $pccm->getRequestComponentSelectedComponents();
+        $retFieldsArray['required_components_ids'] = $pccm->getRequestComponentRequiredComponents($this->sessionManager->getUser());
+        echo json_encode($retFieldsArray);
+        return true;
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$guestRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$guestRequest;
+    }
 
-	protected function logRequest() {
-		return false;
-	}
+    protected function logRequest() {
+        return false;
+    }
 
 }
 

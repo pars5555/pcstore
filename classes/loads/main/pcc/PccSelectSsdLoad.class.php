@@ -24,7 +24,7 @@ class PccSelectSsdLoad extends PccSelectComponentLoad {
 
     public function getNeededCategoriesIdsAndOrFormulaArray() {
         $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
             $motherboard_sata_ide_support = $pccm->getMbSataIdeSupport($mb);
         }
@@ -44,7 +44,7 @@ class PccSelectSsdLoad extends PccSelectComponentLoad {
 
     public function getSelectedComponentItemId() {
         $ssds = null;
-        if ($_REQUEST['ssds']) {
+        if (isset($_REQUEST['ssds'])) {
             $ssds = $this->secure($_REQUEST['ssds']);
             $this->addParam('selected_components_ids_str', $ssds);
             $ssds = explode(',', $ssds);
@@ -60,7 +60,7 @@ class PccSelectSsdLoad extends PccSelectComponentLoad {
     }
 
     public function getSelectedItemCount($item) {
-        if ($_REQUEST['ssds']) {
+        if (isset($_REQUEST['ssds'])) {
             $ssds = $this->secure($_REQUEST['ssds']);
             $ssds = ',' . $ssds . ',';
             return substr_count($ssds, $item->getId());
@@ -70,7 +70,7 @@ class PccSelectSsdLoad extends PccSelectComponentLoad {
     }
 
     public function getComponentMaxPossibleCount($item) {
-        if ($_REQUEST['mb']) {
+        if (isset($_REQUEST['mb'])) {
             $mb = $this->secure($_REQUEST['mb']);
         }
         $pccm = PcConfiguratorManager::getInstance($this->config, $this->args);
@@ -84,7 +84,7 @@ class PccSelectSsdLoad extends PccSelectComponentLoad {
     }
 
     public function getSelectedSameItemsCount() {
-        if ($_REQUEST['ssds']) {
+        if (isset($_REQUEST['ssds'])) {
             $ssds = $this->secure($_REQUEST['ssds']);
             $ssds = explode(',', $ssds);
             $ssds = array_unique($ssds);

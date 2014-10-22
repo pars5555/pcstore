@@ -36,9 +36,9 @@ class ConfirmOrderAction extends GuestAction {
 
         $this->initManagers();
         list($cho_include_vat, $cho_do_shipping, $cho_shipping_recipient_name,
-                $cho_shipping_address, $cho_shipping_region, $cho_shipping_tel, 
+                $cho_shipping_address, $cho_shipping_region, $cho_shipping_tel,
                 $cho_shipping_cell, $billing_is_different_checkbox,
-                $cho_billing_recipient_name, $cho_billing_address, 
+                $cho_billing_recipient_name, $cho_billing_address,
                 $cho_billing_region, $cho_billing_tel, $cho_billing_cell,
                 $cho_payment_type, $cho_apply_user_points, $cho_credit_supplier_id,
                 $cho_selected_deposit_amount, $cho_selected_credit_months, $metadataObject) = $this->checkoutManager->initShippingParamsFromRequest();
@@ -116,14 +116,8 @@ class ConfirmOrderAction extends GuestAction {
         }
 
         //start order confirming
-        $orderId = $this->ordersManager->addOrder($userEmail, $calcCartTotalDealerPrice,
-                $cho_shipping_tel, $cho_billing_tel, $cho_shipping_cell, $cho_billing_cell,
-                $paymentType, $userTypeString, $dollarExchange, $cho_do_shipping
-                , $cho_shipping_address, $cho_billing_address, $cho_shipping_region,
-                $cho_shipping_recipient_name, $cho_billing_recipient_name,
-                $cho_billing_region, ($billing_is_different_checkbox != '1'), $usablePoints, 
-                $shippingCost, $grandTotalAMD, $grandTotalUSD, $existingDealsPromoCodes,
-                $cartTotalDealsDiscountAMD, $cho_include_vat, $metadataObject);
+        $orderId = $this->ordersManager->addOrder($userEmail, $calcCartTotalDealerPrice, $cho_shipping_tel, $cho_billing_tel, $cho_shipping_cell, $cho_billing_cell, $paymentType, $userTypeString, $dollarExchange, $cho_do_shipping
+                , $cho_shipping_address, $cho_billing_address, $cho_shipping_region, $cho_shipping_recipient_name, $cho_billing_recipient_name, $cho_billing_region, ($billing_is_different_checkbox != '1'), $usablePoints, $shippingCost, $grandTotalAMD, $grandTotalUSD, $existingDealsPromoCodes, $cartTotalDealsDiscountAMD, $cho_include_vat, $metadataObject);
         $this->orderDetailsManager->addOrderDetails($orderId, $userEmail, $this->getUser(), $cho_include_vat);
 
         //reduce user point if any used
@@ -146,17 +140,15 @@ class ConfirmOrderAction extends GuestAction {
         $this->customerCartManager->emptyCustomerCart($userEmail);
         $this->emailOrderDetails($orderId);
 
-        if (isset($validPromoDiscount))
-        {
+        if (isset($validPromoDiscount)) {
             $discountPromoCodesManager = DiscountPromoCodesManager::getInstance($this->config, $this->args);
-            $discountDto = $discountPromoCodesManager->getByPromoCode($validPromoDiscount);  
-            if ($discountDto)
-            {
+            $discountDto = $discountPromoCodesManager->getByPromoCode($validPromoDiscount);
+            if ($discountDto) {
                 $discountDto->setUsed(1);
                 $discountPromoCodesManager->updateByPK($discountDto);
             }
         }
-        
+
         $jsonArr = array('status' => "ok", "order_id" => $orderId);
         echo json_encode($jsonArr);
         return true;

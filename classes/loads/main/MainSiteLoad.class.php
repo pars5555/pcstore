@@ -16,16 +16,16 @@ class MainSiteLoad extends GuestLoad {
 
     public function load() {
         $this->addParam('under_construction', $this->getCmsVar('under_construction'));
-        
+
         $winUid = uniqid();
         $this->addParam("winUid", $winUid);
 
-        $refererUrl = $_SERVER['HTTP_REFERER'];
+        $refererUrl = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if (!empty($refererUrl) && strpos($refererUrl, $_SERVER['HTTP_HOST']) === false) {
             $referersManager = ReferersManager::getInstance($this->config, $this->args);
             $referersManager->addRow($refererUrl, $_SERVER['REQUEST_URI']);
         }
-        if ($_REQUEST["lang"]) {
+        if (isset($_REQUEST["lang"])) {
             $lc = $_REQUEST["lang"];
             $this->setcookie('ul', $lc);
             $_COOKIE['ul'] = $lc;

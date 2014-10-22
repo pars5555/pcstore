@@ -44,7 +44,6 @@ class MainLoad extends GuestLoad {
         return TEMPLATES_DIR . "/cms/main.tpl";
     }
 
-
     public function isMain() {
         return true;
     }

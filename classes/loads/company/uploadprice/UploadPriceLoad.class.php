@@ -34,13 +34,13 @@ class UploadPriceLoad extends CompanyLoad {
             $this->addParam("companyEmailServersEmailsCount", $companyEmailServersEmailsCount);
             $this->addParam("companyExProfileDto", $dto);
             $dealerEmails = trim($dto->getDealerEmails());
-            $this->addParam("total_price_email_recipients_count", empty($dealerEmails) ? 0 : count(explode(';', $dealerEmails)));            
+            $this->addParam("total_price_email_recipients_count", empty($dealerEmails) ? 0 : count(explode(';', $dealerEmails)));
             array_map('unlink', glob(HTDOCS_TMP_DIR_ATTACHMENTS . "/companies/" . $companyId . "/*"));
         } else if ($userLevel === UserGroups::$ADMIN) {
             $allCompanies = $companyManager->getAllCompanies(true, true);
             $companiesIds = $companyManager->getCompaniesIdsArray($allCompanies);
             $companiesNames = $companyManager->getCompaniesNamesArray($allCompanies);
-            if ($_REQUEST['selected_company']) {
+            if (isset($_REQUEST['selected_company'])) {
                 $selectedCompanyId = $this->secure($_REQUEST['selected_company']);
             } else {
                 $selectedCompanyId = $allCompanies[0]->getId();
@@ -51,7 +51,7 @@ class UploadPriceLoad extends CompanyLoad {
         $companyPrices = $companiesPriceListManager->getCompanyHistoryPricesOrderByDate($selectedCompanyId, 0, 50);
         $this->addParam("company_prices", $companyPrices);
         $this->addParam("selectedCompanyId", $selectedCompanyId);
-        if ($_REQUEST['show_send_email_to_dealers'] && $_REQUEST['show_send_email_to_dealers'] == 1) {
+        if (isset($_REQUEST['show_send_email_to_dealers']) && $_REQUEST['show_send_email_to_dealers'] == 1) {
             $this->addParam("show_send_email_to_dealers", 1);
         }
         $emailServersManager = EmailServersManager::getInstance($this->config, $this->args);

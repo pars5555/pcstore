@@ -18,37 +18,37 @@ require_once (CLASSES_PATH . "/loads/main/pcc/PccSelectComponentLoad.class.php")
  */
 class PccSelectMouseLoad extends PccSelectComponentLoad {
 
-	public function getRequiredCategoriesFormulasArray() {
-		return array(CategoriesConstants::MOUSE);
-	}
+    public function getRequiredCategoriesFormulasArray() {
+        return array(CategoriesConstants::MOUSE);
+    }
 
-	public function getSelectedSameItemsCount() {
-		if ($_REQUEST['mouse']) {
-			return 1;
-		} else {
-			return 0;
-		}
-	}
+    public function getSelectedSameItemsCount() {
+        if (isset($_REQUEST['mouse'])) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 
-	public function getComponentTypeIndex() {
-		return PcConfiguratorManager::$PCC_COMPONENTS['mouse'];
-	}
+    public function getComponentTypeIndex() {
+        return PcConfiguratorManager::$PCC_COMPONENTS['mouse'];
+    }
 
-	public function getNeededCategoriesIdsAndOrFormulaArray() {
-		return array();
-	}
+    public function getNeededCategoriesIdsAndOrFormulaArray() {
+        return array();
+    }
 
-	public function getSelectedComponentItemId() {
-		if ($_REQUEST['mouse']) {
-			$mouse = $this->secure($_REQUEST['mouse']);
-			$this->addParam('selected_component_id', $mouse);
-		}
-		return $mouse;
-	}
+    public function getSelectedComponentItemId() {
+        if (isset($_REQUEST['mouse'])) {
+            $mouse = $this->secure($_REQUEST['mouse']);
+            $this->addParam('selected_component_id', $mouse);
+        }
+        return $mouse;
+    }
 
-	public function getTabHeaderInfoText() {
-		return $this->getPhraseSpan(241);
-	}
+    public function getTabHeaderInfoText() {
+        return $this->getPhraseSpan(241);
+    }
 
 }
 

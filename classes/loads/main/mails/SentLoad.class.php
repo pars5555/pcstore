@@ -10,30 +10,30 @@ require_once (CLASSES_PATH . "/managers/CustomerLocalEmailsManager.class.php");
  */
 class SentLoad extends GuestLoad {
 
-	public function load() {
-		$customerLocalEmailsManager = CustomerLocalEmailsManager::getInstance($this->config, $this->args);
-		$customer = $this->getCustomer();
-		$customerEmail = $customer->getEmail();
-		$emails = $customerLocalEmailsManager->getCustomerSentEmailsByCustomerEmail($customerEmail);
-		$this->addParam("emails", $emails);
-	}
+    public function load() {
+        $customerLocalEmailsManager = CustomerLocalEmailsManager::getInstance($this->config, $this->args);
+        $customer = $this->getCustomer();
+        $customerEmail = $customer->getEmail();
+        $emails = $customerLocalEmailsManager->getCustomerSentEmailsByCustomerEmail($customerEmail);
+        $this->addParam("emails", $emails);
+    }
 
-	public function getDefaultLoads($args) {
-		$loads = array();
-		return $loads;
-	}
+    public function getDefaultLoads($args) {
+        $loads = array();
+        return $loads;
+    }
 
-	public function isValidLoad($namespace, $load) {
-		return true;
-	}
+    public function isValidLoad($namespace, $load) {
+        return true;
+    }
 
-	public function getTemplate() {
-		return TEMPLATES_DIR . "/main/mails/sent.tpl";
-	}
+    public function getTemplate() {
+        return TEMPLATES_DIR . "/main/mails/sent.tpl";
+    }
 
-	public function getRequestGroup() {
-		return RequestGroups::$userCompanyRequest;
-	}
+    public function getRequestGroup() {
+        return RequestGroups::$userCompanyRequest;
+    }
 
 }
 

@@ -8,15 +8,15 @@ require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
  */
 class UpdateAllAmdItemsPricesAction extends AdminAction {
 
-	public function service() {
+    public function service() {
 
-		$itemManager = ItemManager::getInstance($this->config, $this->args);
-		$itemManager->UpdateAllAmdItemsPrices();
+        $itemManager = ItemManager::getInstance($this->config, $this->args);
+        $itemManager->UpdateAllAmdItemsPrices();
 
-		$jsonArr = array('status' => "ok");
-		echo json_encode($jsonArr);
-		return true;
-	}
+        $jsonArr = array('status' => "ok");
+        echo json_encode($jsonArr);
+        return true;
+    }
 
 }
 

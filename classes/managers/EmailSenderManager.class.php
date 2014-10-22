@@ -118,6 +118,7 @@ class EmailSenderManager extends AbstractManager {
             try {
                 $this->mail->AddAddress(trim($emailAddress));
             } catch (Exception $ex) {
+                
             }
         }
 

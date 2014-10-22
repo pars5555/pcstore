@@ -143,7 +143,7 @@ class CustomerCartManager extends AbstractManager {
     }
 
     public function deleteCartElement($cartItemId) {
-        $cartItemDto = $this->mapper->selectByPK($cartItemId);        
+        $cartItemDto = $this->mapper->selectByPK($cartItemId);
         if ($cartItemDto) {
             $bundleId = intval($cartItemDto->getBundleId());
             $isSystemBundle = $cartItemDto->getIsSystemBundle();

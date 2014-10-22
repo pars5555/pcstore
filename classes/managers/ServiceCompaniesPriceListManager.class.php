@@ -3,7 +3,6 @@
 require_once (CLASSES_PATH . "/managers/AbstractManager.class.php");
 require_once (CLASSES_PATH . "/dal/mappers/ServiceCompaniesPriceListMapper.class.php");
 
-
 /**
  * CategoryHierarchyManager class is responsible for creating,
  *
@@ -73,7 +72,7 @@ class ServiceCompaniesPriceListManager extends AbstractManager {
         return $this->mapper->getCompanyHistoryPricesOrderByDate($company_id, $offset, $limit);
     }
 
-     public function addCompanyPrice($serviceCompanyId, $fileName, $fileExt, $uploaderType, $uploaderId, $uploadedDateTime = null) {
+    public function addCompanyPrice($serviceCompanyId, $fileName, $fileExt, $uploaderType, $uploaderId, $uploadedDateTime = null) {
         $dto = $this->mapper->createDto();
         $dto->setServiceCompanyId($serviceCompanyId);
         $dto->setFileName($fileName);
@@ -239,7 +238,7 @@ class ServiceCompaniesPriceListManager extends AbstractManager {
         return true;
     }
 
-     public function unzipFile($file) {
+    public function unzipFile($file) {
         $zip = new ZipArchive();
         $res = $zip->open($file);
         $extracted_path = DATA_TEMP_DIR . '/' . $this->random_string();
@@ -251,7 +250,8 @@ class ServiceCompaniesPriceListManager extends AbstractManager {
             echo 'failed, code:' . $res;
         }
     }
-private function findPriceFilesInDirectory($path) {
+
+    private function findPriceFilesInDirectory($path) {
         if ($handle = opendir($path)) {
             $ret = array();
             while (false !== ($entry = readdir($handle))) {

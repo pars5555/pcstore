@@ -11,23 +11,23 @@
  */
 class RedirectException extends Exception {
 
-	private $redirectTo;
+    private $redirectTo;
 
-	/**
-	 * Return a thingie based on $paramie
-	 * @abstract  
-	 * @access
-	 * @param boolean $paramie 
-	 * @return integer|babyclass
-	 */
-	public function __construct($redirectTo, $message) {
-		$this->redirectTo = $redirectTo;
-		parent::__construct($message, 1);
-	}
+    /**
+     * Return a thingie based on $paramie
+     * @abstract  
+     * @access
+     * @param boolean $paramie 
+     * @return integer|babyclass
+     */
+    public function __construct($redirectTo, $message) {
+        $this->redirectTo = $redirectTo;
+        parent::__construct($message, 1);
+    }
 
-	public function getRedirectTo() {
-		return $this->redirectTo;
-	}
+    public function getRedirectTo() {
+        return $this->redirectTo;
+    }
 
 }
 

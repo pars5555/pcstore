@@ -11,7 +11,7 @@ class ServiceCompanyDto extends AbstractDto {
 
     // Map of DB value to Field value
     protected $mapArray = array("id" => "id", "short_name" => "shortName", "name" => "name", "email" => "email",
-        "price_emails_keywords"=>"priceEmailsKeywords",
+        "price_emails_keywords" => "priceEmailsKeywords",
         "registered_date" => "registeredDate", "password" => "password", "hash" => "hash",
         "last_ping" => "lastPing", "url" => "url", "services_description_html" => "servicesDescriptionHtml",
         "access_key" => "accessKey",

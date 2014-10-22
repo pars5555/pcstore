@@ -46,7 +46,7 @@ class GetPriceFileAction extends GuestAction {
             if (!empty($companyLastPrices)) {
                 if (count($companyLastPrices) === 1) {
                     $pricePath = DATA_DIR . "/companies_prices/" . $companyId . '/' . $companyLastPrices[0]->getFileName() . '.' . $companyLastPrices[0]->getFileExt();
-                    if (file_exists($pricePath)) {                        
+                    if (file_exists($pricePath)) {
                         $companiesPriceListManager->downloadFile($pricePath, $company->getShortName() . "_" . $companyLastPrices[0]->getFileName());
                     } else {
                         echo "file not exists!";
@@ -148,7 +148,7 @@ class GetPriceFileAction extends GuestAction {
                     if (count($unzipPriceFile) === 1) {
                         $companiesPriceListManager->downloadFile($unzipPriceFile[0], $company->getShortName() . "_" . $price->getFileName());
                     } else {
-                        
+
                         $companiesPriceListManager->downloadFile($pricePath, $company->getShortName() . "_" . $price->getFileName());
                     }
                 } else {

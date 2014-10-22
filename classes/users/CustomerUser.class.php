@@ -23,7 +23,7 @@ class CustomerUser extends AuthenticateUser {
 
 		$this->setCookieParam("ut", UserGroups::$USER);
 		
-		$this->customerManager = UserManager::getInstance($this->config, $this->args);
+		$this->customerManager = UserManager::getInstance(null, null);
 	}
         
 	public function setUniqueId($uniqueId, $updateDb = true) {

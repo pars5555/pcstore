@@ -4,6 +4,7 @@ require_once (CLASSES_PATH . "/loads/GuestLoad.class.php");
 require_once (CLASSES_PATH . "/managers/ItemManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryManager.class.php");
 require_once (CLASSES_PATH . "/managers/CategoryHierarchyManager.class.php");
+
 /**
  *
  * @author Vahagn Sookiasian
@@ -27,7 +28,7 @@ class ItemLargeViewLoad extends GuestLoad {
 
 
         $itemManager = ItemManager::getInstance($this->config, $this->args);
-        if ($_REQUEST["item_id"]) {
+        if (isset($_REQUEST["item_id"])) {
             $item_id = $_REQUEST["item_id"];
         } elseif ($this->args[0]) {
             $item_id = $this->args[0];

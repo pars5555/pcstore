@@ -9,18 +9,18 @@ require_once (CLASSES_PATH . "/dal/dto/AbstractDto.class.php");
  */
 class EmailTemplateDto extends AbstractDto {
 
-	// Map of DB value to Field value
-	protected $mapArray = array("id" => "id", "content_en" => "contentEn", "content_am" => "contentAm", "content_ru" => "contentRu");
+    // Map of DB value to Field value
+    protected $mapArray = array("id" => "id", "content_en" => "contentEn", "content_am" => "contentAm", "content_ru" => "contentRu");
 
-	// constructs class instance
-	public function __construct() {
-		
-	}
+    // constructs class instance
+    public function __construct() {
+        
+    }
 
-	// returns map array
-	public function getMapArray() {
-		return $this->mapArray;
-	}
+    // returns map array
+    public function getMapArray() {
+        return $this->mapArray;
+    }
 
 }
 

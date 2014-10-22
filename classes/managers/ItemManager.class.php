@@ -69,7 +69,6 @@ class ItemManager extends AbstractManager {
         return $this->mapper->getItemsByIds($items_ids);
     }
 
-  
     public function getCompanyItems($companyId, $includeHiddens = false) {
         return $this->mapper->getCompanyItems($companyId, $includeHiddens);
     }
@@ -542,6 +541,7 @@ class ItemManager extends AbstractManager {
     public function getPccItemsByCategoryFormula($user_id, $userLevel, $requiredCategoriesFormulasArray, $neededCategoriesIdsAndOrFormulaArray, $offset, $limit, $selected_items_array = null, $search_text = null) {
 
         $profitFormula = $this->getItemProfitFormula($user_id, $userLevel);
+        $selected_items_sql_array_str = null;
         if (isset($selected_items_array)) {
             if (is_array($selected_items_array)) {
                 $selected_items_sql_array_str = '(' . implode(',', $selected_items_array) . ')';
@@ -973,12 +973,11 @@ class ItemManager extends AbstractManager {
         $this->setItemImage1AndImage2FromPicturesFile($itemId);
         return true;
     }
-    
-    public function deleteOldHiddenItemsByMonthsNumber($monthsNumber)
-    {
+
+    public function deleteOldHiddenItemsByMonthsNumber($monthsNumber) {
         $itemsDtos = $this->mapper->getHiddenItemsByMonthsNumber($monthsNumber);
         foreach ($itemsDtos as $itemDto) {
-                $this->deleteItemWithPictures($itemDto->getId());
+            $this->deleteItemWithPictures($itemDto->getId());
         }
         return count($itemsDtos);
     }

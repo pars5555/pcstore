@@ -56,46 +56,40 @@ class PaypalTransactionsManager extends AbstractManager {
         return self::$instance;
     }
 
-    
-    public function setOrderPaymentError($orderId, $message)
-    {
+    public function setOrderPaymentError($orderId, $message) {
         $dtos = $this->selectByField('order_id', $orderId);
-        if (empty($dtos))
-        {
+        if (empty($dtos)) {
             $dto = $this->createDto();
-            $dto ->setOrderId($orderId);
-            $dto ->setPaymentReceived(0);        
-            $dto ->setMessage($message);        
+            $dto->setOrderId($orderId);
+            $dto->setPaymentReceived(0);
+            $dto->setMessage($message);
             $this->insertDto($dto);
-        }else
-        {
+        } else {
             $dto = $dtos[0];
-            $dto ->setOrderId($orderId);
-            $dto ->setPaymentReceived(0);        
-            $dto ->setMessage($message); 
+            $dto->setOrderId($orderId);
+            $dto->setPaymentReceived(0);
+            $dto->setMessage($message);
             $this->updateByPk($dto);
         }
     }
-            
-    public function setOrderCompleted($orderId)
-    {
+
+    public function setOrderCompleted($orderId) {
         $dtos = $this->selectByField('order_id', $orderId);
-        if (empty($dtos))
-        {
+        if (empty($dtos)) {
             $dto = $this->createDto();
-            $dto ->setOrderId($orderId);
-            $dto ->setPaymentReceived(1);        
-            $dto ->setMessage('');        
-            $this->insertDto($dto);            
-        }else
-        {
+            $dto->setOrderId($orderId);
+            $dto->setPaymentReceived(1);
+            $dto->setMessage('');
+            $this->insertDto($dto);
+        } else {
             $dto = $dtos[0];
-            $dto ->setOrderId($orderId);
-            $dto ->setPaymentReceived(1);        
-            $dto ->setMessage(''); 
+            $dto->setOrderId($orderId);
+            $dto->setPaymentReceived(1);
+            $dto->setMessage('');
             $this->updateByPk($dto);
         }
     }
+
 }
 
 ?>

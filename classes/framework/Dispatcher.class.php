@@ -42,7 +42,7 @@ class Dispatcher {
 
         $command = "";
         $isAjax = false;
-        $args = array();        
+        $args = array();
         if (preg_match_all("/(\/([^\/]+))/", $_REQUEST["_url"], $matches)) {
             if ($matches[2][0] == "dynamic") {
                 array_shift($matches[2]);
@@ -76,7 +76,7 @@ class Dispatcher {
 
         $this->sessionManager->setArgs($args);
         $this->sessionManager->setDispatcher($this);
-       
+
         $this->dispatch($package, $command, $args);
     }
 

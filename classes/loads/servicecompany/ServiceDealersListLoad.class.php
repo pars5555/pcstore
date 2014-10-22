@@ -11,18 +11,16 @@ require_once (CLASSES_PATH . "/managers/ServiceCompanyDealersManager.class.php")
  */
 class ServiceDealersListLoad extends ServiceCompanyLoad {
 
-	public function load() {
-		$serviceCompanyDealersManager = ServiceCompanyDealersManager::getInstance($this->config, $this->args);
-		$serviceCompanyId = $this->sessionManager->getUser()->getId();
-		$dealers = $serviceCompanyDealersManager->getCompanyDealersJoindWithUsersFullInfo($serviceCompanyId);
-		$this->addParam('dealers', $dealers);
-	}
+    public function load() {
+        $serviceCompanyDealersManager = ServiceCompanyDealersManager::getInstance($this->config, $this->args);
+        $serviceCompanyId = $this->sessionManager->getUser()->getId();
+        $dealers = $serviceCompanyDealersManager->getCompanyDealersJoindWithUsersFullInfo($serviceCompanyId);
+        $this->addParam('dealers', $dealers);
+    }
 
-	
-	public function getTemplate() {
-		return TEMPLATES_DIR . "/servicecompany/dealers_list.tpl";
-	}
-
+    public function getTemplate() {
+        return TEMPLATES_DIR . "/servicecompany/dealers_list.tpl";
+    }
 
 }
 

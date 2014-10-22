@@ -17,38 +17,38 @@ class ImportPriceLoad extends AdminLoad {
         $importPriceManager = ImportPriceManager::getInstance($this->config, $this->args);
         $company_id = $_REQUEST['company_id'];
 
-        
+
         $companiesPriceListManager = CompaniesPriceListManager::getInstance($this->config, $this->args);
         $companyLastPrices = $companiesPriceListManager->getCompanyLastPrices($company_id);
         $selectPriceIndex = 0;
-        if (isset($_REQUEST['price_index'])){
+        if (isset($_REQUEST['price_index'])) {
             $selectPriceIndex = intval($_REQUEST['price_index']);
         }
         $companyPriceNames = array();
         foreach ($companyLastPrices as $priceIndex => $priceDto) {
-            $companyPriceNames[$priceIndex] = 'Price'.($priceIndex+1);
+            $companyPriceNames[$priceIndex] = 'Price' . ($priceIndex + 1);
         }
         $this->addParam('price_names', $companyPriceNames);
         $this->addParam('selected_price_index', $selectPriceIndex);
-        
-        
+
+
         $companyPriceSheetsNames = $importPriceManager->getCompanyPriceSheetsNamesFromCache($company_id, $selectPriceIndex);
         $this->addParam('price_sheets_names', $companyPriceSheetsNames);
         $selectSheetIndex = 0;
-        if (isset($_REQUEST['sheet_index'])){
+        if (isset($_REQUEST['sheet_index'])) {
             $selectSheetIndex = intval($_REQUEST['sheet_index']);
         }
         $this->addParam('selected_sheet_index', $selectSheetIndex);
 
 
         $selected_rows_index = array();
-        if (isset($_REQUEST['selected_rows_index']) && strlen($_REQUEST['selected_rows_index'])>0) {
+        if (isset($_REQUEST['selected_rows_index']) && strlen($_REQUEST['selected_rows_index']) > 0) {
             $selected_rows_index = explode(',', $_REQUEST['selected_rows_index']);
         }
         $this->addParam('selected_rows_index', $selected_rows_index);
 
 
-        $values = $importPriceManager->loadCompanyPriceFromCache($company_id,$selectPriceIndex,  $selectSheetIndex);
+        $values = $importPriceManager->loadCompanyPriceFromCache($company_id, $selectPriceIndex, $selectSheetIndex);
         if (!$values) {
             $this->addParam('priceNotFound', true);
             return false;

@@ -14,7 +14,7 @@ class YourProfileLoad extends GuestLoad {
         $userManager = UserManager::getInstance($this->config, $this->args);
         $userId = $this->getUserId();
 
-        if (!isset($_REQUEST['refresh']) && $_REQUEST['refresh'] != 1 && $this->getCustomer()->getLoginType() === 'pcstore') {
+        if ((!isset($_REQUEST['refresh']) || $_REQUEST['refresh'] != 1) && $this->getCustomer()->getLoginType() === 'pcstore') {
             $custEmail = $this->getCustomerLogin();
             if (isset($_REQUEST['password'])) {
                 $password = $_REQUEST['password'];

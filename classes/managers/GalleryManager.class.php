@@ -12,50 +12,50 @@ require_once (CLASSES_PATH . "/managers/AbstractManager.class.php");
  */
 class GalleryManager {
 
-	/**
-	 * @var app config
-	 */
-	private $config;
+    /**
+     * @var app config
+     */
+    private $config;
 
-	/**
-	 * @var passed arguemnts
-	 */
-	private $args;
+    /**
+     * @var passed arguemnts
+     */
+    private $args;
 
-	/**
-	 * @var singleton instance of class
-	 */
-	private static $instance = null;
+    /**
+     * @var singleton instance of class
+     */
+    private static $instance = null;
 
-	/**
-	 * Initializes DB mappers
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	function __construct($config, $args) {
-		$this->config = $config;
-		$this->args = $args;
-	}
+    /**
+     * Initializes DB mappers
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    function __construct($config, $args) {
+        $this->config = $config;
+        $this->args = $args;
+    }
 
-	/**
-	 * Returns an singleton instance of this class
-	 *
-	 * @param object $config
-	 * @param object $args
-	 * @return
-	 */
-	public static function getInstance($config, $args) {
+    /**
+     * Returns an singleton instance of this class
+     *
+     * @param object $config
+     * @param object $args
+     * @return
+     */
+    public static function getInstance($config, $args) {
 
-		if (self::$instance == null) {
+        if (self::$instance == null) {
 
-			self::$instance = new GalleryManager($config, $args);
-		}
-		return self::$instance;
-	}
+            self::$instance = new GalleryManager($config, $args);
+        }
+        return self::$instance;
+    }
 
-	//public function load
+    //public function load
 }
 
 ?>

@@ -13,7 +13,7 @@ class ItemsManagementLoad extends AdminLoad {
         }
         if ($loadPage == 1) {
             $this->addParam("page_loaded", 1);
-            
+
             $companyManager = CompanyManager::getInstance($this->config, $this->args);
             $allCompanyDtos = $companyManager->getAllCompanies(false, false);
             $companyNames = array();
@@ -28,8 +28,8 @@ class ItemsManagementLoad extends AdminLoad {
             if (isset($_REQUEST['selected_company_id'])) {
                 $selectedCompanyId = intval($_REQUEST['selected_company_id']);
             }
-            
-            
+
+
             $includeHiddens = false;
             if (isset($_REQUEST['include_hiddens'])) {
                 $includeHiddens = intval($_REQUEST['include_hiddens']) == 1;
@@ -62,9 +62,6 @@ class ItemsManagementLoad extends AdminLoad {
             $itemManager = ItemManager::getInstance($this->config, $this->args);
             $items = $itemManager->getItemsByAdminConditions($selectedCompanyId, $includeHiddens, $emptyModel, $emptyShortSpec, $emptyFullSpec, $picturesCount);
             $this->addParam("items", $items);
-
-
-            
         } else {
             $this->addParam("page_loaded", 0);
         }
